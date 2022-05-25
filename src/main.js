@@ -1,5 +1,11 @@
-// Este es el punto de entrada de tu aplicacion
+import { createUser } from './firebase/auth.js';
 
-import { myFunction } from './lib/index.js';
+const SEND = document.getElementById('send');
 
-myFunction();
+// ------------------------creatUser button
+
+SEND.addEventListener('click', () => {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  createUser(email, password);
+});
