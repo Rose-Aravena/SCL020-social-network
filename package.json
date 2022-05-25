@@ -32,6 +32,7 @@
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0"
   },
+  "type": "module",
   "engines": {
     "node": ">=14"
   }
