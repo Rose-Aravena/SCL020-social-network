@@ -1,0 +1,29 @@
+*{
+    background-color: #ADBED2;
+}
+#root{
+    display: grid;
+}
+#logo{
+    margin: 100px auto;
+    margin-bottom: 20px;
+}
+h1, h2{
+    margin: 10px auto;
+}
+#signIn{
+    background-color: #FFE5B6;
+    width: 170px;
+    height: 60px;
+    margin: 30px auto;
+    border-radius: 15px;
+}
+#googleButton, #mailButton{
+    width: 170px;
+    height: 60px;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+#mailButton{
+    background-color: #EB8F90;
+}
