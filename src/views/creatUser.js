@@ -1,13 +1,26 @@
 /** @format */
+import { onNavigate } from '../router/routes.js';
 import { replaceHTML } from '../utils/utils.js';
 
 const getHTMLTemplate = () => {
-  return `<h1>Crear cuenta</h1>
-  <input type="text" id="email" />
-  <input type="text" name="" id="password" />
-  <button id="send">enviar</button>`;
+  return `<div id="containerCreatUser">
+  <input type="text" placeholder="Nombre de usuario">
+  <input type="email" placeholder="ingrsa tu email">
+  <input type="password" placeholder="contraseña">
+</div>
+<button id='CreatSend'>Registrar</button>
+<img id='logoreatUser' src='imagenes/veterinary.png'> </img>`;
+};
+
+const addEvents = () => {
+  const send = document.getElementById('CreatSend');
+  send.addEventListener('click', () => {
+    onNavigate('/post');
+  });
 };
 const CreatUser = () => {
-  replaceHTML(getHTMLTemplate());
+  const template = getHTMLTemplate();
+  replaceHTML(template);
+  addEvents();
 };
 export default CreatUser;
