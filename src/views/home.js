@@ -1,7 +1,7 @@
 /** @format */
-import { onNavigate } from '../router/routes.js';
 
 import { replaceHTML } from '../utils/utils.js';
+import addEvents from '../events/homeEvents.js';
 
 const getHTMLTemplate = () => {
   const template = `<img id='logo' src='imagenes/logo.png'> </img>
@@ -13,16 +13,6 @@ const getHTMLTemplate = () => {
   return template;
 };
 
-const addEvents = () => {
-  const RegisterMail = document.getElementById('mailButton');
-  RegisterMail.addEventListener('click', () => {
-    onNavigate('/createUser');
-  });
-  const SignIn = document.getElementById('signIn');
-  SignIn.addEventListener('click', () => {
-    onNavigate('/signIn');
-  });
-};
 const Home = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
