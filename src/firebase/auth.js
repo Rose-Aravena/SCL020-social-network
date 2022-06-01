@@ -1,4 +1,12 @@
-import { createUserWithEmailAndPassword, auth } from './init.js';
+/** @format */
+
+import {
+  createUserWithEmailAndPassword,
+  auth,
+  provider,
+  signInWithPopup,
+  signOut,
+} from './init.js';
 
 const createUser = async (email, password) => {
   try {
@@ -8,4 +16,18 @@ const createUser = async (email, password) => {
   }
 };
 
-export { createUser };
+const loginGoogle = async () => {
+  try {
+    const response = await signInWithPopup(auth, provider);
+    console.log(response);
+    return response.user;
+  } catch (error) {
+    throw error.message;
+  }
+};
+
+const logOut = async () => {
+  signOut(auth);
+};
+
+export { createUser, loginGoogle, logOut };
