@@ -5,13 +5,13 @@ import { loginGoogle } from '../firebase/auth.js';
 const addEvents = () => {
   const SignIn = document.getElementById('signIn');
   SignIn.addEventListener('click', () => {
-    onNavigate('/signIn', 2);
+    onNavigate('/signIn');
   });
   const google = document.getElementById('googleButton');
   google.addEventListener('click', async () => {
     try {
       await loginGoogle();
-      return onNavigate('/post')
+      return onNavigate('/post');
     } catch (error) {
       console.log(error);
     }

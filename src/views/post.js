@@ -1,32 +1,24 @@
 // import { onNavigate } from '../router/routes.js';
 
 import { replaceHTML } from '../utils/utils.js';
-import { onNavigate } from '../router/routes.js';
+import { addEvent } from '../events/postEvents.js';
 
 const getHTMLTemplate = () => {
-    const template = `<button id= 'logOut'>Cerrar sesion</button>
+  const template = `<button id= 'logOut'>Cerrar sesion</button>
     <h1>Pots</h1>
     <form id='formPost'>
         <input id='inputPost' type='text' placeholder='Cuentanos todo' autocomplete='off'/>
-        <button id= 'post'>postear</button>
+        <button type='submit' id= 'post'>postear</button>
     </form>
     `;
-    return template;
-}
-
-
-const addEvents = () => {
-  
-  const logOut = document.getElementById('logOut');
-    logOut.addEventListener('click', () => {
-      onNavigate('/');
-    });
+  return template;
 };
+
 const post = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
-  addEvents();
+  addEvent();
 };
 
-  export default post;
+export default post;
 

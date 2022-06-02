@@ -28,7 +28,7 @@ export {
   signInWithPopup,
   signOut,
   getFirestore,
-  collection, 
+  collection,
   addDoc,
-  db
+  db,
 };

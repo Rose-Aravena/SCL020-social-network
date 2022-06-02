@@ -7,16 +7,24 @@ import Papitas from '../views/papitas.js';
 import post from '../views/post.js';
 
 const routes = {
-  '/': Home,
-  '/createUser': CreatUser,
-  '/signIn': SignIn,
+  '/': Home, // { func: Home, id: 1 },
+  '/createUser': CreatUser, // { func: CreatUser, id: 2 },
+  '/signIn': SignIn, // { func: SignIn, id: 3 },
   '/papitas': Papitas,
   '/post': post,
 };
 
 const onNavigate = (pathname) => {
   // "/papitas"
-  window.history.pushState({}, pathname, window.location.origin + pathname);
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname);
   routes[pathname]();
+  // routes[pathname].func();
 };
-export { routes, onNavigate };
+window.onpopstate = () => {
+  console.log(window.location.pathname);
+  routes[window.location.pathname]();
+};
+export { routes, onNavigate }
