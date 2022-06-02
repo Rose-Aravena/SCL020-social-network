@@ -6,5 +6,5 @@ const replaceHTML = (template) => {
 };
 
 export { replaceHTML };
-//crear un div
-//al div agregarle el nodo, appendchild, creat element, etc...
+// crear un div
+// al div agregarle el nodo, appendchild, creat element, etc...

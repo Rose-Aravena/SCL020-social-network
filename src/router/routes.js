@@ -15,7 +15,7 @@ const routes = {
 };
 
 const onNavigate = (pathname) => {
-  //"/papitas"
+  // "/papitas"
   window.history.pushState({}, pathname, window.location.origin + pathname);
   routes[pathname]();
 };

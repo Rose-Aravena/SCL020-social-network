@@ -5,7 +5,7 @@ import { loginGoogle } from '../firebase/auth.js';
 const addEvents = () => {
   const SignIn = document.getElementById('signIn');
   SignIn.addEventListener('click', () => {
-    onNavigate('/signIn');
+    onNavigate('/signIn', 2);
   });
   const google = document.getElementById('googleButton');
   google.addEventListener('click', async () => {
