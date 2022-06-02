@@ -23,9 +23,10 @@ const addEvents = () => {
     });
 };
 const post = () => {
-    const template = getHTMLTemplate();
-    replaceHTML(template);
-    addEvents();
-  };
+  const template = getHTMLTemplate();
+  replaceHTML(template);
+  addEvents();
+};
 
   export default post;
+
