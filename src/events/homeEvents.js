@@ -11,6 +11,7 @@ const addEvents = () => {
   google.addEventListener('click', async () => {
     try {
       await loginGoogle();
+      return onNavigate('/post')
     } catch (error) {
       console.log(error);
     }

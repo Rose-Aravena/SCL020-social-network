@@ -26,8 +26,10 @@ const loginGoogle = async () => {
   }
 };
 
-const logOut = async () => {
-  signOut(auth);
-};
+const logOut = signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
 
 export { createUser, loginGoogle, logOut };
