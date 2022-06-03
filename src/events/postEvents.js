@@ -1,4 +1,5 @@
 import { onNavigate } from '../router/routes.js';
+import { savePost } from '../firebase/firestore.js';
 
 // document.getElementById('formPost').addEventListener('submit', (e) => {
 //   e.preventDefault();
@@ -15,7 +16,7 @@ export const addEvent = () => {
   lookPost.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log('linea4');
-    // const description = inputPost['inputPost'];
-    // savePost(description.value);
+    const description = lookPost['inputPost'];
+    savePost(description.value);
   });
 }  
