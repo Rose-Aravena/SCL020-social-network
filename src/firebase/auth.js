@@ -7,11 +7,22 @@ import {
   provider,
   signInWithPopup,
   signOut,
+  signInWithEmailAndPassword
 } from './init.js';
 
-const createUser = async (email, password) => {
+const signInUser = async (auth, email, password) => {
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
+    const response = await signInWithEmailAndPassword (auth, email, password)
+    return response 
+  }catch (error) {
+    throw error.message;
+  }
+}
+
+const createUser = async (auth, email, password) => {
+  try {
+    const response = await createUserWithEmailAndPassword(auth, email, password);
+    return response
   } catch (error) {
     throw error.message;
   }
@@ -37,4 +48,4 @@ try{
 }
 };
 
-export { createUser, loginGoogle, loginOut };
+export { createUser, loginGoogle, loginOut, signInUser };

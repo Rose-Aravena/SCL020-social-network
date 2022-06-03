@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  signInWithEmailAndPassword
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
@@ -31,4 +32,5 @@ export {
   collection,
   addDoc,
   db,
+  signInWithEmailAndPassword
 };
