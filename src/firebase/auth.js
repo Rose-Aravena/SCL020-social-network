@@ -1,5 +1,6 @@
 /** @format */
 
+
 import {
   createUserWithEmailAndPassword,
   auth,
@@ -26,10 +27,14 @@ const loginGoogle = async () => {
   }
 };
 
-const loginOut = signOut(auth).then(() => {
-  // Sign-out successful.
-}).catch((error) => {
-  // An error happened.
-});
+const loginOut = async () =>{
+try{
+  const response = await signOut(auth);
+  console.log(response);
+  return response
+}catch(error){
+  throw error.message
+}
+};
 
 export { createUser, loginGoogle, loginOut };

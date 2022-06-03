@@ -1,5 +1,7 @@
 import { onNavigate } from '../router/routes.js';
 import { savePost } from '../firebase/firestore.js';
+import { loginOut } from '../firebase/auth.js';
+
 
 // document.getElementById('formPost').addEventListener('submit', (e) => {
 //   e.preventDefault();
@@ -9,8 +11,13 @@ import { savePost } from '../firebase/firestore.js';
 // });
 export const addEvent = () => {
   const logOut = document.getElementById('logOut');
-  logOut.addEventListener('click', () => {
-    onNavigate('/');
+  logOut.addEventListener('click', async() => {
+    try {
+    await loginOut ();
+    return onNavigate('/');
+    }catch (error){
+      console.log(error)
+    }
   });
   const lookPost = document.getElementById('formPost');
   lookPost.addEventListener('submit', (e) => {
