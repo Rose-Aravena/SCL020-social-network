@@ -5,12 +5,14 @@ import addEvents from '../events/homeEvents.js';
 
 const getHTMLTemplate = () => {
   const template = //html
-    `<img id='logo' src='icons/logo.png'> </img>
+    ` <div id='home'>
+    <img id='logo' src='icons/logo.png'> </img>
   <h1>Conecta con PetsLifes</h1>
   <button id="signIn">Iniciar sesión</button>
   <h2>¿No tienes cuenta?</h2>
   <button id="googleButton">Inicia con Google</button>
-  <button id="mailButton">Registrate con tu mail</button>`;
+  <button id="mailButton">Registrate con tu mail</button>
+  </div>`;
   return template;
 };
 
