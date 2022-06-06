@@ -1,5 +1,11 @@
+*{
+    font-family: 'Inter', sans-serif;
+    color: #12406A;
+}
 body{
-    background: #ADBED2;
+    background-color: #ADBED2;
+    margin: 0px;
+    padding: 0px;
 }
 #home{
     display: flex;
@@ -11,6 +17,9 @@ body{
 }
 h1, h2{
     margin: 10px auto;
+    color: #12406A;
+    font-family: 'Inter';
+    font-style: italic;
 }
 #signIn{
     background-color: #FFE5B6;
@@ -28,6 +37,7 @@ h1, h2{
 #mailButton{
     background-color: #EB8F90;
 }
+/*screenSignIn*/
 .back{
     max-width: 10%;
     min-width: 3px;
@@ -92,3 +102,66 @@ input::-webkit-input-placeholder {
     }
  
   }
+
+
+footer{
+    background-color: #FFE5B6;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#search, #home, #newPost{
+    padding: 10px 30px;
+}
+#myPost{
+    display: grid;
+    width: 40px;
+    height: 40px;
+    margin: 3% 0 2% 88%;
+}
+/* template creatpost */
+#formPost{
+    display: grid;
+    margin: 100px 10px 20px 10px;
+    padding: 15px 20px 5px 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1.5px solid #12406A;
+    background-color: #E2EBF6;
+}
+#titlePost, #description, #hashtag{
+    background: #E2EBF6;
+    margin: 10px 30px 20px 30px;
+    border-radius: 10px;
+}
+#titlePost, #hashtag{
+    height: 30px;
+}
+#description{
+    height: 150px;
+}
+#username{
+    text-align: left;
+}
+#button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#cancelButton{
+    background-color: #EB8F90;
+    height: 50px;
+    width: 140px;
+    border-radius: 15px;
+    margin: 10px 30px 10px 30px;
+}
+#postButton{
+    height: 50px;
+    width: 140px;
+    border-radius: 15px;
+    margin: 10px 30px 10px 30px;
+}
