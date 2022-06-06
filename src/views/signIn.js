@@ -1,9 +1,6 @@
 /** @format */
-
-import { onNavigate } from '../router/routes.js';
-
 import { replaceHTML } from '../utils/utils.js';
-import { addEvents } from '../events/sigInEvents.js'
+import { addEvents } from '../events/sigInEvents.js';
 
 const getHTMLTemplate = () => {
   const template = `<div id="containerSignIn">
@@ -16,12 +13,6 @@ const getHTMLTemplate = () => {
 <img id='logoSingIn' src='imagenes/kitty.png'> </img>`;
   return template;
 };
-// const addEvents = () => {
-//   const send = document.getElementById('send');
-//   send.addEventListener('click', () => {
-//     onNavigate('/post');
-//   });
-// };
 const SignIn = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);

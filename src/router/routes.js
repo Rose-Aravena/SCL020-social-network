@@ -7,9 +7,9 @@ import Papitas from '../views/papitas.js';
 import post from '../views/post.js';
 
 const routes = {
-  '/': Home, // { func: Home, id: 1 },
-  '/createUser': CreatUser, // { func: CreatUser, id: 2 },
-  '/signIn': SignIn, // { func: SignIn, id: 3 },
+  '/': Home,
+  '/createUser': CreatUser,
+  '/signIn': SignIn,
   '/papitas': Papitas,
   '/post': post,
 };

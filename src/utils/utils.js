@@ -5,6 +5,12 @@ const replaceHTML = (template) => {
   root.innerHTML = template;
 };
 
-export { replaceHTML };
-// crear un div
-// al div agregarle el nodo, appendchild, creat element, etc...
+const saveLocalUser = (user) => {
+  window.localStorage.currentUser = JSON.stringify(user);
+};
+
+const getLocalUser = () => {
+  return JSON.parse(window.localStorage.currentUser);
+};
+
+export { replaceHTML, saveLocalUser, getLocalUser };

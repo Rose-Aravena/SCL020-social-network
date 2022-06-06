@@ -1,7 +1,6 @@
 /** @format */
 
 import { replaceHTML } from '../utils/utils.js';
-// eslint-disable-next-line import/no-cycle
 import addEvents from '../events/homeEvents.js';
 
 const getHTMLTemplate = () => {
