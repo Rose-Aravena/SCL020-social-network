@@ -9,7 +9,7 @@ const getHTMLTemplate = () => `<div id="containerCreatUser">
   <input id='password' type="password" placeholder="contraseña">
 </div>
 <button id='creatSend'>Registrar</button>
-<img id='logoreatUser' src='imagenes/veterinary.png'> </img>`;
+<img id='logoreatUser' src='icons/veterinary.png'> </img>`;
 
 const CreatUser = () => {
   const template = getHTMLTemplate();

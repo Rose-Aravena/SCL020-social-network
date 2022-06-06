@@ -4,7 +4,8 @@ import { replaceHTML } from '../utils/utils.js';
 import addEvents from '../events/homeEvents.js';
 
 const getHTMLTemplate = () => {
-  const template = `<img id='logo' src='imagenes/logo.png'> </img>
+  const template = //html
+    `<img id='logo' src='icons/logo.png'> </img>
   <h1>Conecta con PetsLifes</h1>
   <button id="signIn">Iniciar sesión</button>
   <h2>¿No tienes cuenta?</h2>

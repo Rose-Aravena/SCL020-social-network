@@ -3,6 +3,10 @@ import { signInUser } from '../firebase/auth.js';
 import { auth } from '../firebase/init.js';
 
 export const addEvents = () => {
+  const back = document.getElementById('back');
+  back.addEventListener('click', () => {
+    onNavigate('/');
+  });
   const send = document.getElementById('send');
   send.addEventListener('click', async () => {
     const email = document.getElementById('email').value;
