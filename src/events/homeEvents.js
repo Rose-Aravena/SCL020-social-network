@@ -10,11 +10,20 @@ const addEvents = () => {
   const google = document.getElementById('googleButton');
   google.addEventListener('click', async () => {
     try {
-      await loginGoogle();
+      const responseGoogle = await loginGoogle();
+      console.log(responseGoogle);
+      //if(el susuario no esta en la lista de la bd, agregalo)
+      //sino(ya esta en la lista), no hagas nada
+      //traer los usuarios, sino no esta en los uid, inyectarlo, sino pasar...
       return onNavigate('/post');
     } catch (error) {
-      console.log(error);
+      return error;
     }
+    // try {
+
+    // } catch (error) {
+
+    // }
   });
   const RegisterMail = document.getElementById('mailButton');
   RegisterMail.addEventListener('click', () => {
