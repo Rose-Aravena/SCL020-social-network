@@ -19,7 +19,6 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const app = initializeApp(config);
 const db = getFirestore(app);
-
 auth.languageCode = 'es';
 
 export {
