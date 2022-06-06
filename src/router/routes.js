@@ -3,14 +3,14 @@
 import Home from '../views/home.js';
 import CreatUser from '../views/creatUser.js';
 import SignIn from '../views/signIn.js';
-import Papitas from '../views/papitas.js';
+import creatPost from '../views/creatPost.js';
 import post from '../views/post.js';
 
 const routes = {
   '/': Home,
   '/createUser': CreatUser,
   '/signIn': SignIn,
-  '/papitas': Papitas,
+  '/creatPost': creatPost,
   '/post': post,
 };
 

@@ -4,6 +4,18 @@ import { loginOut } from '../firebase/auth.js';
 import { getLocalUser } from '../utils/utils.js';
 
 export const addEvent = () => {
+  const search = document.getElementById('search');
+  search.addEventListener('click', () => {
+    onNavigate('/search');
+  });
+  const home = document.getElementById('home');
+  home.addEventListener('click', () => {
+    onNavigate('/post');
+  });
+  const newPost = document.getElementById('newPost');
+  newPost.addEventListener('click', () => {
+    onNavigate('/creatPost');
+  });
   const logOut = document.getElementById('logOut');
   logOut.addEventListener('click', async () => {
     try {
