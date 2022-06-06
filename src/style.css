@@ -7,12 +7,13 @@ body{
     margin: 0px;
     padding: 0px;
 }
-#root{
-    display: grid;
+#home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 #logo{
-    margin: 100px auto;
-    margin-bottom: 20px;
+    margin: 10% auto;
 }
 h1, h2{
     margin: 10px auto;
@@ -36,6 +37,72 @@ h1, h2{
 #mailButton{
     background-color: #EB8F90;
 }
+/*screenSignIn*/
+.back{
+    max-width: 10%;
+    min-width: 3px;
+}
+.thinButton{
+    width: 161px;
+    height: 38px;
+    border-radius: 16px;
+}
+section{
+    display: flex;
+    align-items: center;
+flex-direction: column;
+margin-top: 5%;
+}
+#send{
+ background-color: #FFE5B6;
+ border: none;
+}
+.containerInputs{
+background: #FFE5B6;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+color: #12406A;
+margin: 20px auto 20px;
+}
+
+.title{
+    font-size: 23px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 5% auto 10px;
+}
+.subTitle{
+    margin: 5% auto 1%;
+}
+#logoSingIn{
+    margin-top: 10%;
+}
+input:not([type="submit"]){
+background-color: #ADBED2;
+border-radius: 2px;
+border: none;
+height: 31px ;
+width: 300px;
+margin: 0 auto 10px;
+}
+input::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+    color: #12406A;
+  }
+@media (min-width: 500px) {
+    .back {
+        width: 10% ;
+        max-width: 50px;
+    }
+    .containerInputs {
+        max-width: 400px;
+    }
+ 
+  }
+
 
 footer{
     background-color: #FFE5B6;

@@ -3,16 +3,23 @@ import { replaceHTML } from '../utils/utils.js';
 import { addEvents } from '../events/sigInEvents.js';
 
 const getHTMLTemplate = () => {
-  const template = /*html*/
-    `<div id="containerSignIn">
-  <img id='back' src='icons/volver.png' alt="MDN">
-  <h3>Email:</h3>
-  <input id= 'email' type="email" placeholder="Ingresa tu email">
-  <h3>Contraseña:</h3>
-  <input id='password' type="password" placeholder="contraseña">
+  const template = // html
+    `<div id='containerSignIn'>
+  <img class='back' id='back' src='icons/volver.png' alt="MDN">
+  <div class='containerInputs'>
+  <h1 class='title'>Inicia Sesión </h1>
+  <h3 class='subTitle'>Email:</h3>
+  <input id= 'email' placeholder="xxx@gmail.com" type="email" >
+  <h3 class='subTitle'>Contraseña:</h3>
+  <input id='password'  placeholder="******" type="password">
 </div>
-<button id='send'>Iniciar</button>
-<img id='logoSingIn' src='icons/kitty.png'> </img>`;
+<section>
+<button class='thinButton' id='send'>Iniciar</button>
+<div id='logoSingIn'>
+<img src='icons/kitty.png'> </img>
+<div/>
+</section>
+<div>`;
   return template;
 };
 const SignIn = () => {
