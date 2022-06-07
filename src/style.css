@@ -1,4 +1,6 @@
-
+*{
+    font-family: 'Inter';
+}
 body{
     background-color: #ADBED2;
     margin: 0px;
@@ -62,7 +64,7 @@ font-style: italic;
     background-color: #EB8F90;
     background-image: url(./icons/mail.png);
     background-size: 21px;
-    background-position: 18px 19px;
+    background-position: 14px 19px;
     background-repeat: no-repeat;
 }
 
@@ -77,18 +79,12 @@ font-style: italic;
     border: none;
     color: #12406A;
 }
-#googleButton{
-    border-style: solid;
-    border-color: #12406A;
-    background-color: #ADBED2;
-
-}
 section{
     display: flex;
     align-items: center;
-flex-direction: column;
-margin-top: 5%;
-justify-content: space-around;
+    flex-direction: column;
+    margin-top: 5%;
+    justify-content: space-around;
 }
 #sectionHome{
     min-height: 30vh;
@@ -278,6 +274,7 @@ label{
     margin: 10px 30px 10px 30px;
     border: none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: #12406A;
 }
 #postButton{
     background: #90BAC4;
@@ -288,6 +285,7 @@ label{
     margin: 10px 30px 10px 30px;
     border: none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: #12406A;
 }
 /* template mypost */
 #out{
@@ -303,8 +301,9 @@ label{
 #search{
     border: 1.5px solid #12406A;
     margin-top: 40px;
+    padding: 10px;
     display: grid;
     border-radius: 15px;
     background: #E2EBF6;
-    height: 40px;
+    height: 20px;
 }
