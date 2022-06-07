@@ -1,5 +1,5 @@
 import { onNavigate } from '../router/routes.js';
-
+import { loginOut } from '../firebase/auth.js';
 
 export const addEvent = () => {
   const search = document.getElementById('searchButton');
@@ -14,8 +14,14 @@ export const addEvent = () => {
   newPost.addEventListener('click', () => {
     onNavigate('/creatPost');
   });
-  const myPost = document.getElementById('myPost');
-  myPost.addEventListener('click', () => {
-    onNavigate('/myPost');
+    const logOut = document.getElementById('out');
+  logOut.addEventListener('click', async () => {
+    try {
+      await loginOut();
+      return onNavigate('/');
+    } catch (error) {
+      return error;
+    }
   });
-};
+
+}

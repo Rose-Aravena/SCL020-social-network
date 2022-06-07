@@ -1,11 +1,11 @@
 import { replaceHTML } from '../utils/utils.js';
-import { addEvent } from '../events/postEvents.js';
+import { addEvent } from '../events/myPostEvents.js';
 
 
 const getHTMLTemplate = () => {
   const template = //html
-  `<img id="myPost" src="icons/verPosts.png">
-   <p id='textMyPost'> Mis post </p>
+  `<img id="out" src="icons/out.png">
+  <p id='textOut'>Cerrar sesión</p>
   <div id="allPost"></div>
   <footer>
     <img id="searchButton" src="icons/buscarHashtag.png">
@@ -15,10 +15,10 @@ const getHTMLTemplate = () => {
   return template;
 };
 
-const post = () => {
+const myPost = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
   addEvent();
 };
 
-export default post;
+export default myPost;

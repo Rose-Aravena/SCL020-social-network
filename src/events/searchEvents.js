@@ -1,6 +1,5 @@
 import { onNavigate } from '../router/routes.js';
 
-
 export const addEvent = () => {
   const search = document.getElementById('searchButton');
   search.addEventListener('click', () => {
@@ -10,12 +9,9 @@ export const addEvent = () => {
   home.addEventListener('click', () => {
     onNavigate('/post');
   });
-  const newPost = document.getElementById('newPostButton');
+  const newPost = document.getElementById('newPost');
   newPost.addEventListener('click', () => {
     onNavigate('/creatPost');
   });
-  const myPost = document.getElementById('myPost');
-  myPost.addEventListener('click', () => {
-    onNavigate('/myPost');
-  });
-};
+
+}
