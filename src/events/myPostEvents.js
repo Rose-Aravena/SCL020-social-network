@@ -14,14 +14,15 @@ export const addEvent = () => {
   newPost.addEventListener('click', () => {
     onNavigate('/creatPost');
   });
-    const logOut = document.getElementById('out');
-  logOut.addEventListener('click', async () => {
-    try {
-      await loginOut();
-      return onNavigate('/');
-    } catch (error) {
-      return error;
-    }
-  });
-
-}
+  const logOut = document.getElementById('out');
+  if (logOut) {
+    logOut.addEventListener('click', async () => {
+      try {
+        await loginOut();
+        return onNavigate('/');
+      } catch (error) {
+        return error;
+      }
+    });
+  }
+};
