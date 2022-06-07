@@ -7,19 +7,21 @@ body{
     margin: 0px;
     padding: 0px;
 }
+/* template home*/
 #home{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 #logo{
-    margin: 10% auto;
+    margin: 80px auto 40px auto;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.7));
 }
 h1, h2{
     margin: 10px auto;
     color: #12406A;
     font-family: 'Inter';
-    font-style: italic;
+    font-weight: 600;
 }
 #signIn{
     background-color: #FFE5B6;
@@ -27,15 +29,33 @@ h1, h2{
     height: 60px;
     margin: 30px auto;
     border-radius: 15px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 #googleButton, #mailButton{
-    width: 170px;
+    width: 230px;
     height: 60px;
     margin: 10px auto;
     border-radius: 15px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#googleButton{
+    background-color: #90BAC4;
+    border:none;
+    background-image: url(./icons/google.png);
+    background-size: 21px;
+    background-position: 18px 19px;
+    background-repeat: no-repeat;
 }
 #mailButton{
     background-color: #EB8F90;
+    background-image: url(./icons/mail.png);
+    background-size: 21px;
+    background-position: 18px 19px;
+    background-repeat: no-repeat;
 }
 /*screenSignIn*/
 .back{
@@ -100,7 +120,6 @@ input::-webkit-input-placeholder {
     .containerInputs {
         max-width: 400px;
     }
- 
   }
 
 
@@ -114,19 +133,25 @@ footer{
     bottom: 0;
     width: 100%;
 }
-#search, #home, #newPost{
+#searchButton, #homeButton, #newPostButton{
     padding: 10px 30px;
 }
 #myPost{
     display: grid;
     width: 40px;
     height: 40px;
-    margin: 3% 0 2% 88%;
+    margin: 3% 0 0 88%;
+}
+#textMyPost{
+    font-size: 10px;
+    font-weight: 600;
+    margin: 1% 1% 2% 87%;
 }
 /* template creatpost */
-#formPost{
+#createPost{
+    width: max-content;
     display: grid;
-    margin: 100px 10px 20px 10px;
+    margin: 70px auto 20px auto;
     padding: 15px 20px 5px 20px;
     text-align: center;
     border-radius: 10px;
@@ -135,14 +160,22 @@ footer{
 }
 #titlePost, #description, #hashtag{
     background: #E2EBF6;
-    margin: 10px 30px 20px 30px;
+    padding: 5px;
+    margin: 10px auto 20px auto;
     border-radius: 10px;
+    border: 1.5px solid #12406A;
+}
+label{
+    font-weight: 800;
 }
 #titlePost, #hashtag{
     height: 30px;
 }
 #description{
     height: 150px;
+    width: 280px;
+    padding: 10px;
+    resize: none;
 }
 #username{
     text-align: left;
@@ -156,12 +189,38 @@ footer{
     background-color: #EB8F90;
     height: 50px;
     width: 140px;
+    font-weight: 600;
     border-radius: 15px;
     margin: 10px 30px 10px 30px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 #postButton{
+    background: #90BAC4;
     height: 50px;
     width: 140px;
+    font-weight: 600;
     border-radius: 15px;
     margin: 10px 30px 10px 30px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* template mypost */
+#out{
+    margin: 10px 10px 0px 20px;
+}
+#textOut{
+    margin-top: 0px;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: 600;
+}
+/* template search*/
+#search{
+    border: 1.5px solid #12406A;
+    margin-top: 40px;
+    display: grid;
+    border-radius: 15px;
+    background: #E2EBF6;
+    height: 40px;
 }

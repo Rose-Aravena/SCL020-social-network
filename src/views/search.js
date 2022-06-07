@@ -1,11 +1,10 @@
 import { replaceHTML } from '../utils/utils.js';
-import { addEvent } from '../events/postEvents.js';
+import { addEvent } from '../events/myPostEvents.js';
 
 
 const getHTMLTemplate = () => {
   const template = //html
-  `<img id="myPost" src="icons/verPosts.png">
-   <p id='textMyPost'> Mis post </p>
+  `<input id='search' type="text" placeholder="#hashtag">
   <div id="allPost"></div>
   <footer>
     <img id="searchButton" src="icons/buscarHashtag.png">
@@ -15,10 +14,10 @@ const getHTMLTemplate = () => {
   return template;
 };
 
-const post = () => {
+const search = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
   addEvent();
 };
 
-export default post;
+export default search;
