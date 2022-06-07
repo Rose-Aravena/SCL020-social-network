@@ -1,18 +1,20 @@
-*{
-    font-family: 'Inter', sans-serif;
-    color: #12406A;
-}
+
 body{
     background-color: #ADBED2;
     margin: 0px;
     padding: 0px;
+    color: #12406A;
 }
 /* template home*/
 #home{
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    justify-content: space-around;
 }
+
 #logo{
     margin: 80px auto 40px auto;
     filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.7));
@@ -50,6 +52,12 @@ h1, h2{
     background-position: 18px 19px;
     background-repeat: no-repeat;
 }
+.tittleHome{
+font-family: 'Inter';
+font-weight: bolder;
+line-height: 29px;
+font-style: italic;
+}
 #mailButton{
     background-color: #EB8F90;
     background-image: url(./icons/mail.png);
@@ -57,8 +65,8 @@ h1, h2{
     background-position: 18px 19px;
     background-repeat: no-repeat;
 }
-/*screenSignIn*/
-.back{
+
+.backIcon{
     max-width: 10%;
     min-width: 3px;
 }
@@ -66,13 +74,28 @@ h1, h2{
     width: 161px;
     height: 38px;
     border-radius: 16px;
+    border: none;
+    color: #12406A;
+}
+#googleButton{
+    border-style: solid;
+    border-color: #12406A;
+    background-color: #ADBED2;
+
 }
 section{
     display: flex;
     align-items: center;
 flex-direction: column;
 margin-top: 5%;
+justify-content: space-around;
 }
+#sectionHome{
+    min-height: 30vh;
+    column-gap: 5%;
+    margin: 0 auto 20%;
+}
+
 #send{
  background-color: #FFE5B6;
  border: none;
@@ -86,8 +109,8 @@ justify-content: center;
 flex-direction: column;
 color: #12406A;
 margin: 20px auto 20px;
+min-width: 90%;
 }
-
 .title{
     font-size: 23px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -96,7 +119,7 @@ margin: 20px auto 20px;
 .subTitle{
     margin: 5% auto 1%;
 }
-#logoSingIn{
+.logoSingIn{
     margin-top: 10%;
 }
 input:not([type="submit"]){
@@ -112,16 +135,76 @@ input::-webkit-input-placeholder {
     line-height: 100px;
     color: #12406A;
   }
+  #containerSignIn{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 6px;
+      max-height: 100%;
+  }
+  #containerSignIn p {
+      margin: 0;
+      font-size: 12px;
+  }
+  .btnBackDog p {
+    margin: 0;
+    font-size: 12px;
+}
+  #containerCreatUser{
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+    max-height: 100vh;
+  }
+  #containerLogoCreate{
+      height: 30%;
+  }
+  #sectionCreatUser{
+      display: flex;
+      margin-top: 2%;
+      column-gap: 1px;
+  }
+  #logoCreatUser{
+      margin-top: 6%;
+  }
+  #iconCreatUser{
+      max-width: 200px;;
+  }
+  #formCreateUser{
+    margin: 5px auto 5px;
+    background-color: #EB8F90;
+  }
+  .btnBackDog{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  #creatSend{
+      background-color: #EB8F90;
+  }
 @media (min-width: 500px) {
-    .back {
+    .backIcon {
         width: 10% ;
         max-width: 50px;
     }
-    .containerInputs {
-        max-width: 400px;
+    .containerInputs {      
+        max-width: 50vw;
+        min-width: 50vw;
     }
-  }
 
+    #containerSignIn > p {
+        font-size: 20px;
+    }
+    #sectionSignIn{
+        margin-top: 2%;
+    }
+    .logoSingIn{
+        margin-top: 2%;
+    }
+    #logoCreatUser{
+        margin-top: 3%;
+    }
+}
 
 footer{
     background-color: #FFE5B6;
@@ -133,6 +216,7 @@ footer{
     bottom: 0;
     width: 100%;
 }
+
 #searchButton, #homeButton, #newPostButton{
     padding: 10px 30px;
 }
