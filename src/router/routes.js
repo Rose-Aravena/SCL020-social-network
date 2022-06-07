@@ -15,7 +15,7 @@ const routes = {
   '/creatPost': creatPost,
   '/post': post,
   '/myPost': myPost,
-  '/search': search
+  '/search': search,
 };
 
 const onNavigate = (pathname) => {

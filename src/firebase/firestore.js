@@ -1,4 +1,4 @@
-import { addDoc, collection, db } from './init.js';
+import { addDoc, collection, db, doc, getDocs } from './init.js';
 
 export const saveUser = (name, email, uid) => {
   addDoc(
@@ -21,4 +21,11 @@ export const savePost = (description, titlePost, hashtag, uidUser) => {
       uidUser,
     },
   );
+};
+export const getUsers = () => {
+  console.log('en getUsers()')
+  // getDocs(collection(db, 'user'));
+};
+export const getPost = () => {
+  getDocs(collection(db, 'post'));
 };

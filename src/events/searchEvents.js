@@ -13,5 +13,4 @@ export const addEvent = () => {
   newPost.addEventListener('click', () => {
     onNavigate('/creatPost');
   });
-
-}
+};

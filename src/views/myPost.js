@@ -4,7 +4,7 @@ import { addEvent } from '../events/myPostEvents.js';
 
 const getHTMLTemplate = () => {
   const template = //html
-  `<img id="out" src="icons/out.png">
+    `<img id="out" src="icons/out.png">
   <p id='textOut'>Cerrar sesión</p>
   <div id="allPost"></div>
   <footer>
@@ -14,7 +14,6 @@ const getHTMLTemplate = () => {
   </footer>`;
   return template;
 };
-
 const myPost = () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
