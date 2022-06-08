@@ -23,9 +23,8 @@ export const savePost = (description, titlePost, hashtag, uidUser) => {
   );
 };
 export const getUsers = () => {
-  console.log('en getUsers()')
-  // getDocs(collection(db, 'user'));
+  return getDocs(collection(db, 'user'));
 };
 export const getPost = () => {
-  getDocs(collection(db, 'post'));
+  return getDocs(collection(db, 'post'));
 };
