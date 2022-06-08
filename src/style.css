@@ -178,30 +178,6 @@ input::-webkit-input-placeholder {
   #creatSend{
       background-color: #EB8F90;
   }
-@media (min-width: 500px) {
-    .backIcon {
-        width: 10% ;
-        max-width: 50px;
-    }
-    .containerInputs {      
-        max-width: 50vw;
-        min-width: 50vw;
-    }
-
-    #containerSignIn > p {
-        font-size: 20px;
-    }
-    #sectionSignIn{
-        margin-top: 2%;
-    }
-    .logoSingIn{
-        margin-top: 2%;
-    }
-    #logoCreatUser{
-        margin-top: 3%;
-    }
-}
-
 footer{
     background-color: #FFE5B6;
     margin: 0px;
@@ -306,4 +282,100 @@ label{
     border-radius: 15px;
     background: #E2EBF6;
     height: 20px;
+}
+@media (min-width: 500px) {
+    .backIcon {
+        width: 10% ;
+        max-width: 50px;
+    }
+    .containerInputs {      
+        max-width: 50vw;
+        min-width: 50vw;
+    }
+
+    #containerSignIn > p {
+        font-size: 20px;
+    }
+    #sectionSignIn{
+        margin-top: 2%;
+    }
+    .logoSingIn{
+        margin-top: 2%;
+    }
+    #logoCreatUser{
+        margin-top: 3%;
+    }
+}
+/* phone small example iphone 4*/
+@media (max-width: 320px){
+    /* home template*/
+    #logo{
+        height: 120px;
+        margin: 20px auto 10px auto;
+    }
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 16px;
+    }
+    #signIn{
+        height: 40px;
+        margin: 10px auto;
+    }
+    #googleButton, #mailButton{
+        height: 40px;
+        background-position: 16px 11px;
+    }
+    /* createPost template*/
+    #createPost{
+        margin: 5px auto 5px auto;
+        width: 260px;
+        padding: 5px 20px 5px 20px;
+    }
+    #titlePost, #hashtag, #description {
+        width: 240px;
+        margin: 0px;
+    }
+    #searchButton, #homeButton, #newPostButton{
+        height: 30px;
+        padding: 8px 30px;
+    }
+    #cancelButton, #postButton{
+        height: 35px;
+    }
+    #username{
+        margin: 10px;
+    }
+}
+/* phone medium example iphone SE*/
+@media (max-width: 380px){
+    #logo{
+      margin: 20px auto 0px auto;  
+    }
+    h1{
+        font-size: 26px;
+        margin: 0px auto;
+    }
+    #signIn{
+        margin: 0px auto;
+    }
+    h2{
+        font-size: 20px;
+    }
+    #sectionHome{
+        margin: 0 auto 8px;
+    }
+     /* createPost template*/
+     #createPost{
+        margin: 20px auto 5px auto;
+        padding: 5px 20px 5px 20px;
+    }
+    #username{
+        margin: 10px;
+    }
+    #searchButton, #homeButton, #newPostButton{
+        height: 45px;
+        padding: 8px 30px;
+    }
 }
