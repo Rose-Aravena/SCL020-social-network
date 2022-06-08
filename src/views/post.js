@@ -1,10 +1,11 @@
 import { replaceHTML } from '../utils/utils.js';
 import { addEvent } from '../events/postEvents.js';
-
+import { arrayPosts, arrayUsers } from '../firebase/getDocsFirebase.js';
+import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
   const template = //html
-  `<img id="myPost" src="icons/verPosts.png">
+    `<img id="myPost" src="icons/verPosts.png">
    <p id='textMyPost'> Mis post </p>
   <div id="allPost"></div>
   <footer>
@@ -15,10 +16,13 @@ const getHTMLTemplate = () => {
   return template;
 };
 
-const post = () => {
+const post = async () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
   addEvent();
+  const allPosts = await arrayPosts();
+  const divAllPost = document.getElementById('allPost');
+  divAllPost.innerHTML = listAllPost(allPosts);
 };
 
 export default post;

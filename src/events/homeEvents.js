@@ -19,11 +19,6 @@ const addEvents = () => {
     } catch (error) {
       return error;
     }
-    // try {
-
-    // } catch (error) {
-
-    // }
   });
   const RegisterMail = document.getElementById('mailButton');
   RegisterMail.addEventListener('click', () => {

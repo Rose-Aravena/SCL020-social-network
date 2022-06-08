@@ -4,7 +4,7 @@ import { addEvents } from '../events/creatUserEvents.js';
 import { replaceHTML } from '../utils/utils.js';
 
 const getHTMLTemplate = () => {
-  const template = //html
+  const template = // html
     `<div id='containerCreatUser'>
     <div class='btnBackDog'>
   <img class='backIcon' id='back' src='icons/volver.png'>
@@ -24,7 +24,6 @@ const getHTMLTemplate = () => {
      <img  id='iconCreatUser' src='icons/veterinary.png'> </img>
      </div>
      </section>
-    
     </div>`;
   return template;
 };

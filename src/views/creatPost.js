@@ -3,8 +3,8 @@ import { replaceHTML } from '../utils/utils.js';
 import { addEvents } from '../events/creatPostEvents.js';
 
 const getHTMLTemplate = () => {
-  const tempate = //html
-  `<form id='formPost'>
+  const tempate = // html
+    `<form id='formPost'>
     <div id ='createPost'>
       <p id='username'>User dice:</p>
       <label>Titulo del post</label>
