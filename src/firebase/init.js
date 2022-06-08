@@ -9,6 +9,7 @@ import {
   signOut,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 import { getFirestore, collection, addDoc, getDocs, doc } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
@@ -36,4 +37,5 @@ export {
   onAuthStateChanged,
   doc,
   getDocs,
+  updateProfile,
 };

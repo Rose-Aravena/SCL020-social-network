@@ -1,11 +1,12 @@
 import { arrayPosts, arrayUsers } from '../firebase/getDocsFirebase.js';
 import { onNavigate } from '../router/routes.js';
 
-export const addEvent = () => {
-  debugger;
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log(arrayUsers());
-  });
+export const addEvent = async () => {
+  // if (document.readyState == 'loading') {
+  //   document.addEventListener('DOMContentLoaded', async () => {
+  //     console.log(await arrayPosts);
+  //   })
+  // }
   const search = document.getElementById('searchButton');
   search.addEventListener('click', () => {
     onNavigate('/search');
