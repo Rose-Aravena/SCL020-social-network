@@ -2,6 +2,7 @@
 import { onNavigate } from '../router/routes.js';
 import { loginGoogle } from '../firebase/auth.js';
 
+
 const addEvents = () => {
   const SignIn = document.getElementById('signIn');
   SignIn.addEventListener('click', () => {

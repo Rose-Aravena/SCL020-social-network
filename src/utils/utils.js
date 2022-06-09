@@ -6,7 +6,8 @@ const replaceHTML = (template) => {
 };
 
 const saveLocalUser = (user) => {
-  return window.localStorage.currentUser = JSON.stringify(user);
+  window.localStorage.currentUser = JSON.stringify(user);
+  return window.localStorage.currentUser;
 };
 
 const getLocalUser = () => {

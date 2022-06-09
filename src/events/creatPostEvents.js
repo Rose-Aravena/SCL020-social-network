@@ -26,11 +26,15 @@ export const addEvents = () => {
     const day = date.toLocaleDateString();
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
+    console.log(window.localStorage.currentUser.uid);
+    console.log(window.localStorage.userName);
     try {
-      await savePost(titlePost, description, hashtag, day, hour, uidUser.uid);
+
+      await savePost(titlePost, description, hashtag, day, hour, uidUser.uid, window.localStorage.userName);
+
       return onNavigate('/post');
     } catch (error) {
       return error;
     }
   });
-}
+};
