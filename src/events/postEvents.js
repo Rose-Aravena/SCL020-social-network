@@ -23,4 +23,8 @@ export const addEvent = async () => {
   myPost.addEventListener('click', () => {
     onNavigate('/myPost');
   });
+  // const like = document.getElementById('like')
+  // like.addEventListener('click', () => {
+  //   console.log('patita')
+  // });
 };

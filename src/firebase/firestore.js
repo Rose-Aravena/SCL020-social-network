@@ -1,4 +1,10 @@
-import { addDoc, collection, db, getDocs, query, where } from './init.js';
+
+import { addDoc, collection, db, doc, getDocs, query, orderBy, where } from './init.js';
+
+const postRef = collection(db, "post");
+
+const postOrder = query(postRef, orderBy("day", "desc"), orderBy("hour", "desc"));
+
 
 export const saveUser = (name, email, uid) => {
   addDoc(
@@ -11,21 +17,26 @@ export const saveUser = (name, email, uid) => {
   );
 };
 
-export const savePost = (description, titlePost, hashtag, uidUser, userName) => {
+
+export const savePost = (description, titlePost, hashtag, day, hour, uidUser, userName) => {
+
   addDoc(
     collection(db, 'post'),
     {
       description,
       titlePost,
       hashtag,
+      day,
+      hour,
       uidUser,
       userName,
     },
   );
 };
 export const getUsers = () => getDocs(collection(db, 'user'));
-export const getPost = () => getDocs(collection(db, 'post'));
+export const getPost = () => getDocs(postOrder);
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));
   return q;
 };
+
