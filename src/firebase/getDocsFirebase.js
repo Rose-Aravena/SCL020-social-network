@@ -1,9 +1,9 @@
-import { getUsers, getPost } from './firestore.js';
+import { getUsers, getPost, getdataUser } from './firestore.js';
 
 const query = (info) => {
   const allData = [];
   info.forEach((doc) => {
-    allData.push(doc.data());
+    allData.push(doc.data());//{name: papaitas, email...}
   });
   return allData;
 };
@@ -26,5 +26,14 @@ export const arrayPosts = async () => {
     return queryPost;
   } catch (error) {
     console.log(error);
+  }
+};
+export const getUserInfo = async (uid) => {
+  try {
+    const response = await getdataUser(uid);
+    const queryUser = query(response);// [{name: kaka, email:kjaka, uid:kjakja}]
+    return queryUser;
+  } catch (error) {
+    return error;
   }
 };

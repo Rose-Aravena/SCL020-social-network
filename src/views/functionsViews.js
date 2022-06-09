@@ -1,7 +1,3 @@
-const postAndUidUser = (data) => {
-
-}
-
 export const listAllPost = (data) => {
   let container = "";
   data.forEach(e => {

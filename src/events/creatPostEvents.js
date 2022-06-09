@@ -22,11 +22,13 @@ export const addEvents = () => {
     const description = document.getElementById('description').value;
     const hashtag = document.getElementById('hashtag').value;
     const uidUser = getLocalUser();
+    console.log(window.localStorage.currentUser.uid);
+    console.log(window.localStorage.userName);
     try {
-      await savePost(titlePost, description, hashtag, uidUser.uid);
+      await savePost(titlePost, description, hashtag, uidUser.uid, window.localStorage.userName);
       return onNavigate('/post');
     } catch (error) {
       return error;
     }
   });
-}
+};

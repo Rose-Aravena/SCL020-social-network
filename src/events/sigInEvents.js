@@ -19,6 +19,7 @@ export const addEvents = () => {
       console.log(await arrayPosts());
       console.log(await arrayUsers());
       console.log(getLocalUser().uid);
+      console.log()
       return onNavigate('/post');
     } catch (error) {
       console.log("ha ocurrido un error al intentar hacer signin", error);
