@@ -203,6 +203,33 @@ footer{
     font-weight: 600;
     margin: 1% 1% 2% 87%;
 }
+/* cardpost */
+#allPost{
+    margin-bottom: 80px;
+}
+#cardPost{
+    width: 350px;
+    margin: 20px auto 0px auto;
+    padding: 10px 20px 5px 20px;
+    text-align: justify;
+    border-radius: 10px;
+    border: 1.5px solid #12406A;
+    background-color: #E2EBF6;
+}
+#tittle{
+    font-weight: 800;
+}
+#date{
+    margin: 0 220px 0 0;
+    padding: 10px 0;
+    font-size: 12px;
+}
+#dateLike{
+    display: flex;
+}
+#like{
+    height: 40px;
+}
 /* template creatpost */
 #createPost{
     width: max-content;
@@ -347,9 +374,13 @@ label{
     #username{
         margin: 10px;
     }
+    /* cardpost template*/
+    #cardPost{
+        width: 250px;
+    }
 }
 /* phone medium example iphone SE*/
-@media (max-width: 380px){
+@media (min-width: 321px) and (max-width: 380px){
     #logo{
       margin: 20px auto 0px auto;  
     }
@@ -377,5 +408,9 @@ label{
     #searchButton, #homeButton, #newPostButton{
         height: 45px;
         padding: 8px 30px;
+    }
+    /* cardpost template*/
+    #cardPost{
+        width: 315px;
     }
 }

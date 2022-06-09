@@ -10,7 +10,7 @@ const getHTMLTemplate = () => {
       <label>Titulo del post</label>
       <input type='text' id='titlePost' autocomplete='off'/>
       <label>Cuentanos más:</label>
-      <textarea id='description' type='text' autocomplete='off' maxlength="150" ></textarea>
+      <textarea id='description' type='text' autocomplete='off' maxlength="1000" ></textarea>
       <label>#Hashtag</label>
       <input id='hashtag' type='text' autocomplete='off'/>
     </div>
