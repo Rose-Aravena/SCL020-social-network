@@ -11,7 +11,7 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
-import { getFirestore, collection, addDoc, getDocs, doc } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, doc, query, where } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 import config from './config.js';
 
@@ -38,4 +38,6 @@ export {
   doc,
   getDocs,
   updateProfile,
+  query,
+  where,
 };
