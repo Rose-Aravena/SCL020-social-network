@@ -57,8 +57,7 @@ onAuthStateChanged(auth, async (user) => {
     console.log(user);
     saveLocalUser(user); // guardo como string el user que devuelve el
     // evento que esccuha un inicio de sesion
-    const signedUser = await getUserInfo(user.uid);//[{name:kajjka, email:kajkja, uid:9898},{name:pepejka, email:kajkja, uid:9898}]
-    console.log(signedUser);
+    const signedUser = await getUserInfo(user.uid);
     window.localStorage.userName = signedUser[0].name;
     window.localStorage.userEmail = signedUser[0].email;
   } else {

@@ -23,7 +23,8 @@ const onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,
-    window.location.origin + pathname);
+    window.location.origin + pathname
+  );
   routes[pathname]();
   // routes[pathname].func();
 };
@@ -31,4 +32,4 @@ window.onpopstate = () => {
   console.log(window.location.pathname);
   routes[window.location.pathname]();
 };
-export { routes, onNavigate }
+export { routes, onNavigate };
