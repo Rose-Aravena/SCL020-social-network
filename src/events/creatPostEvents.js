@@ -5,15 +5,15 @@ import { getLocalUser } from '../utils/utils.js';
 let date = new Date(); // para guardar da fecha y hora en la db del post
 
 export const addEvents = () => {
-  const cancel = document.getElementById('cancelButton'); 
+  const cancel = document.getElementById('cancelButton');
   cancel.addEventListener('click', () => {
     onNavigate('/post');
   });
-  const home = document.getElementById('homeButton'); 
+  const home = document.getElementById('homeButton');
   home.addEventListener('click', () => {
     onNavigate('/post');
   });
-  const search = document.getElementById('searchButton'); 
+  const search = document.getElementById('searchButton');
   search.addEventListener('click', () => {
     onNavigate('/search');
   });
@@ -26,12 +26,22 @@ export const addEvents = () => {
     const day = date.toLocaleDateString();
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
+    const usersLikes = {};
+    const countPaw = 0;
     console.log(window.localStorage.currentUser.uid);
     console.log(window.localStorage.userName);
     try {
-
-      await savePost(titlePost, description, hashtag, day, hour, uidUser.uid, window.localStorage.userName);
-
+      await savePost(
+        titlePost,
+        description,
+        hashtag,
+        day,
+        hour,
+        uidUser.uid,
+        window.localStorage.userName,
+        usersLikes,
+        countPaw,
+      );
       return onNavigate('/post');
     } catch (error) {
       return error;
