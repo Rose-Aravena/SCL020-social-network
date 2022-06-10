@@ -14,6 +14,3 @@ export const listAllPost = (data) => {
   });
   return container;
 };
-
-// tener el contenido del post con el uid del usuario que creo1 el post
-// por cada uid hay que traer el nombre del usuario desde firetore

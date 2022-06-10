@@ -14,4 +14,8 @@ const getLocalUser = () => {
   return JSON.parse(window.localStorage.currentUser);
 };
 
-export { replaceHTML, saveLocalUser, getLocalUser };
+const allUidDB = (data) => {
+  const uids = data.map((user) => user.uid);
+  return uids;
+};
+export { replaceHTML, saveLocalUser, getLocalUser, allUidDB };
