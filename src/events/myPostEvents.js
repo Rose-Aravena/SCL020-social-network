@@ -14,6 +14,7 @@ export const addEvent = () => {
   newPost.addEventListener('click', () => {
     onNavigate('/creatPost');
   });
+  // cierre de sesion
   const logOut = document.getElementById('out');
   if (logOut) {
     logOut.addEventListener('click', async () => {

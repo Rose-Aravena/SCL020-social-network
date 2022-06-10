@@ -19,10 +19,10 @@ const getHTMLTemplate = () => {
 const post = async () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
-  addEvent();
   const allPosts = await arrayPosts();
   const divAllPost = document.getElementById('allPost');
   divAllPost.innerHTML = listAllPost(allPosts);
+  addEvent();
 };
 
 export default post;

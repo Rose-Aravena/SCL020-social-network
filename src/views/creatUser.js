@@ -21,7 +21,7 @@ const getHTMLTemplate = () => {
      <section id='sectionCreatUser'>
      <button class='thinButton' id='creatSend'>Registrar</button>
      <div id='logoCreatUser'>
-     <img  id='iconCreatUser' src='icons/veterinary.png'> </img>
+     <img  id='iconCreatUser' src='icons/veterinary.png'>
      </div>
      </section>
     </div>`;

@@ -7,7 +7,7 @@ const getHTMLTemplate = () => {
   const template = //html
     ` <div id='home'>
     <div>
-    <img id='logo' src='icons/logo.png'> </img>
+    <img id='logo' src='icons/logo.png'>
     </div>
   <h1 class='tittleHome'>Conecta con PetsLifes</h1>
   <button class='thinButton' id="signIn">Iniciar sesión</button>

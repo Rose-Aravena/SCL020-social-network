@@ -8,7 +8,10 @@ export const listAllPost = (data) => {
          <p class="text">${e.hashtag}</p>
         <div id="dateLike">
           <p id="date">${e.day}</p>
-          <img id="like" src="./icons/patita.PNG">
+          <span id="count">0</span>
+          <picture id="like">
+            <img id="patita" class ="no" src="./icons/patita.PNG">
+          </picture>
         </div>
       </div>`
   });
