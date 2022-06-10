@@ -9,7 +9,7 @@ export const addEvents = () => {
   back.addEventListener('click', () => {
     onNavigate('/');
   });
-  const send = document.getElementById('send');
+  const send = document.getElementById('send'); // inicio de sesion con correo y contraseña
   send.addEventListener('click', async () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;

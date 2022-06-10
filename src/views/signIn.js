@@ -19,8 +19,8 @@ const getHTMLTemplate = () => {
 <section id='sectionSignIn'>
 <button class='thinButton' id='send'>Iniciar</button>
 <div class='logoSingIn'>
-<img src='icons/kitty.png'> </img>
-<div/>
+<img src='icons/kitty.png'>
+</div>
 </section>
 <div>`;
   return template;

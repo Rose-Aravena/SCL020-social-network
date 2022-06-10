@@ -50,7 +50,7 @@ const loginOut = async () => {
   }
 };
 
-onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(auth, async (user) => { // observador
   if (user) {
     console.log(`userUid= ${user.uid} evento siempre presente`);
     // aca debo guardar localmente (navegador) el nuevo id del usuario
@@ -64,20 +64,6 @@ onAuthStateChanged(auth, async (user) => {
     window.localStorage.clear();
   }
 });
-
-// const observer = (auth, )
-
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     // User is signed out
-//     // ...
-//   }
-// });
 
 export {
   createUser,

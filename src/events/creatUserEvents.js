@@ -1,15 +1,14 @@
 import { onNavigate } from '../router/routes.js';
 import { createUser } from '../firebase/auth.js';
 import { saveUser } from '../firebase/firestore.js';
-import { auth, updateProfile } from '../firebase/init.js';
-import { getLocalUser } from '../utils/utils.js';
+import { auth } from '../firebase/init.js';
 
 export const addEvents = () => {
   const back = document.getElementById('back');
   back.addEventListener('click', () => {
     onNavigate('/');
   });
-  const send = document.getElementById('creatSend');
+  const send = document.getElementById('creatSend'); // guardando el user en db
   send.addEventListener('click', async () => {
     const userName = document.getElementById('userName').value;
     const email = document.getElementById('email').value;
