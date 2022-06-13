@@ -1,7 +1,7 @@
 import { onNavigate } from '../router/routes.js';
 
 export const addEvent = async () => {
-  
+
   const search = document.getElementById('searchButton');
   search.addEventListener('click', () => {
     onNavigate('/search');
@@ -19,21 +19,22 @@ export const addEvent = async () => {
     onNavigate('/myPost');
   });
   // like de patitas
-  // const like = document.getElementById('like');
-  // const patita = document.getElementById('patita');
-  // const count = document.getElementById("count");
-  
-  // patita.addEventListener('click', () => {
-  //   if(patita.classList.contains("no")){
-  //     patita.src="./icons/patitalike.PNG"
-  //     patita.classList.remove("no")
-  //     patita.classList.add("yes")
-  //     count.textContent++;
-  //   }else{
-  //     patita.src="./icons/patita.PNG"
-  //     patita.classList.remove("yes")
-  //     patita.classList.add("no")
-  //     count.textContent--;
-  //   }
-  // });
+
+  const patita = document.getElementById('patita');
+  const count = document.getElementById('count');
+
+  patita.addEventListener('click', () => {
+    if (patita.classList.contains('no')) {
+      patita.src = './icons/patitalike.PNG';
+      patita.classList.remove('no');
+      patita.classList.add('yes');
+      count.textContent++;
+    } else {
+      patita.src = './icons/patita.PNG';
+      patita.classList.remove('yes');
+      patita.classList.add('no');
+      count.textContent--;
+    }
+  });
+
 };
