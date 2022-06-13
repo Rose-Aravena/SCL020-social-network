@@ -3,7 +3,7 @@ import { addDoc, collection, db, doc, getDocs, query, orderBy, where } from './i
 
 const postRef = collection(db, "post");
 
-const postOrder = query(postRef, orderBy("day", "desc"), orderBy("hour", "desc"));
+export const postOrder = query(postRef, orderBy("day", "desc"), orderBy("hour", "desc"));
 
 
 export const saveUser = (name, email, uid) => {

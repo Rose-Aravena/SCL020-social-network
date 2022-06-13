@@ -19,9 +19,10 @@ const getHTMLTemplate = () => {
 const post = async () => {
   const template = getHTMLTemplate();
   replaceHTML(template);
-  const allPosts = await arrayPosts();
-  const divAllPost = document.getElementById('allPost');
-  divAllPost.innerHTML = listAllPost(allPosts);
+  // const allPosts = await arrayPosts();
+  // const divAllPost = document.getElementById('allPost');
+  // divAllPost.innerHTML = listAllPost(allPosts);
+  listAllPost();
   addEvent();
 };
 

@@ -2,4 +2,10 @@
 // eslint-disable-next-line import/no-unresolved
 import { onNavigate } from '../router/routes.js';
 
-onNavigate('/');
+if (window.localStorage.userName === undefined) {
+    onNavigate('/');
+  } else {
+    onNavigate('/post');
+  }
+
+
