@@ -1,5 +1,12 @@
 
-import { addDoc, collection, db, getDocs, query, orderBy, where } from './init.js';
+
+import { addDoc, collection, db, doc, getDocs, query, orderBy, where } from './init.js';
+
+const postRef = collection(db, "post");
+
+export const postOrder = query(postRef, orderBy("day", "desc"), orderBy("hour", "desc"));
+
+
 
 const postRef = collection(db, 'post');
 const postOrder = query(postRef, orderBy('day', 'desc'), orderBy('hour', 'desc'));

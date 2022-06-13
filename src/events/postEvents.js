@@ -19,6 +19,7 @@ export const addEvent = async () => {
     onNavigate('/myPost');
   });
   // like de patitas
+
   const patita = document.getElementById('patita');
   const count = document.getElementById('count');
 
@@ -35,4 +36,5 @@ export const addEvent = async () => {
       count.textContent--;
     }
   });
+
 };
