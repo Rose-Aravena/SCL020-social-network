@@ -26,7 +26,7 @@ export const addEvents = () => {
     const day = date.toLocaleDateString();
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
-    const usersLikes = {};
+    const usersLikes = [];
     const countPaw = 0;
     console.log(window.localStorage.currentUser.uid);
     console.log(window.localStorage.userName);

@@ -1,4 +1,4 @@
-import { getUsers, getPost, getdataUser } from './firestore.js';
+import { getUsers, getdataUser } from './firestore.js';
 
 const query = (info) => { // recorre data y trae campos especificados 
   const allData = [];  // (guarda dentro de un array) (metodo firestore)
