@@ -1,6 +1,5 @@
 import { replaceHTML } from '../utils/utils.js';
-import { addEvent } from '../events/postEvents.js';
-import { arrayPosts, arrayUsers } from '../firebase/getDocsFirebase.js';
+import { addEvent, clickPaws } from '../events/postEvents.js';
 import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
@@ -22,8 +21,10 @@ const post = async () => {
   // const allPosts = await arrayPosts();
   // const divAllPost = document.getElementById('allPost');
   // divAllPost.innerHTML = listAllPost(allPosts);
-  listAllPost();
+  await listAllPost();
   addEvent();
+  const paws = document.querySelectorAll('.btn-like');
+  clickPaws(paws);
 };
 
 export default post;

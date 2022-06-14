@@ -2,7 +2,6 @@ import { onNavigate } from '../router/routes.js';
 import { signInUser } from '../firebase/auth.js';
 import { auth } from '../firebase/init.js';
 import { getLocalUser } from '../utils/utils.js';
-import { arrayPosts, arrayUsers } from '../firebase/getDocsFirebase.js';
 
 export const addEvents = () => {
   const back = document.getElementById('back');
@@ -16,8 +15,6 @@ export const addEvents = () => {
     console.log(email, password);
     try {
       const response = await signInUser(auth, email, password);
-      console.log(await arrayPosts());
-      console.log(await arrayUsers());
       console.log(getLocalUser().uid);
       console.log()
       return onNavigate('/post');

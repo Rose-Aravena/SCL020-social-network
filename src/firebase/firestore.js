@@ -1,15 +1,8 @@
+import { addDoc, collection, db, doc, getDocs, query, orderBy, where, onSnapshot, updateDoc, arrayUnion, arrayRemove } from './init.js';  
 
+const postsRef = collection(db, 'post');
+const postOrder = query(postsRef, orderBy('day', 'desc'), orderBy('hour', 'desc'));
 
-import { addDoc, collection, db, doc, getDocs, query, orderBy, where } from './init.js';
-
-const postRef = collection(db, "post");
-
-export const postOrder = query(postRef, orderBy("day", "desc"), orderBy("hour", "desc"));
-
-
-
-const postRef = collection(db, 'post');
-const postOrder = query(postRef, orderBy('day', 'desc'), orderBy('hour', 'desc'));
 export const saveUser = (name, email, uid) => {
   addDoc(
     collection(db, 'user'),
@@ -47,8 +40,26 @@ export const savePost = (
   );
 };
 export const getUsers = () => getDocs(collection(db, 'user'));
-export const getPost = () => getDocs(postOrder);
+export const getPosts = () => getDocs(postOrder);
+// export const onGetPost = (callback) => onSnapshot(getPost(), callback); // actualizar en tiempo real
+
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));
   return q;
 };
+
+export const addLike = async (id, uidUser) => {
+  try{
+  await updateDoc(doc(db, 'post', id),{
+    usersLikes: arrayUnion(uidUser)
+  });
+}catch(error){
+  console.log(error)
+}
+}
+export const removeLike = async (id, uidUser) => {
+  await updateDoc(doc(db, 'post', id),{
+    usersLikes: arrayRemove(uidUser)
+  });
+}
+

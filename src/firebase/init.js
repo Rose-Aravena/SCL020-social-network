@@ -12,7 +12,7 @@ import {
   updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 
-import { getFirestore, collection, addDoc, getDocs, doc, query, orderBy, where } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, doc, query, orderBy, where, onSnapshot, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 
 import config from './config.js';
@@ -43,4 +43,8 @@ export {
   query, 
   orderBy,
   where,
+  onSnapshot,
+  updateDoc,
+  arrayUnion, 
+  arrayRemove
 };
