@@ -41,7 +41,7 @@ export const savePost = (
 };
 export const getUsers = () => getDocs(collection(db, 'user'));
 export const getPosts = () => getDocs(postOrder);
-// export const onGetPost = (callback) => onSnapshot(getPost(), callback); // actualizar en tiempo real
+export const onGetPost = (callback) => onSnapshot(postOrder, callback); // actualizar en tiempo real
 
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));

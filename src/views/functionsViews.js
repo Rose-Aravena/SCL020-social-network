@@ -1,11 +1,11 @@
 
-import { getPosts, addLike, removeLike } from "../firebase/firestore.js";
+import { getPosts, addLike, removeLike, onGetPost } from "../firebase/firestore.js";
 import { getLocalUser } from '../utils/utils.js';  
 
 export const listAllPost = async () => {
   const uidUser = getLocalUser();
   try{
-  const querySnapshot = await getPosts();
+    onGetPost((querySnapshot) => {
   
   let container = "";
   querySnapshot.forEach((doc) => {
@@ -14,12 +14,13 @@ export const listAllPost = async () => {
   if(usersLikes.includes(uidUser.uid)){
    container += // html
         `<div id="cardPost">
+           <p id="userName"><b>${post.userName}</b> dice:</p>
            <p id="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
            <p class="text">${post.hashtag}</p>
           <div id="dateLike">
             <p id="date">${post.day}</p>
-            <span id="count">0</span>
+            <span id="count">${usersLikes.length}</span>
             <picture id="like">
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
             </picture>
@@ -28,12 +29,13 @@ export const listAllPost = async () => {
   } else {
     container += // html
         `<div id="cardPost">
+           <p id="userName"><b>${post.userName} </b>dice:</p>
            <p id="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
            <p class="text">${post.hashtag}</p>
           <div id="dateLike">
             <p id="date">${post.day}</p>
-            <span id="count">0</span>
+            <span id="count">${usersLikes.length}</span>
             <picture id="like">
               <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
             </picture>
@@ -41,6 +43,7 @@ export const listAllPost = async () => {
         </div>`
   }
   });
+
   const divAllPost = document.getElementById('allPost');
   divAllPost.innerHTML = container;
 
@@ -59,6 +62,7 @@ export const listAllPost = async () => {
           patita.classList.add('yes');
             count.textContent++;
       } else {
+        removeLike(event.target.dataset.id, uidUser.uid)
           patita.src = './icons/patita.PNG';
           patita.classList.remove('yes');
           patita.classList.add('no');
@@ -66,6 +70,7 @@ export const listAllPost = async () => {
       }
     })
   })
+});
 }catch (error) {
     console.log(error);
     return error;

@@ -1,5 +1,5 @@
 import { replaceHTML } from '../utils/utils.js';
-import { addEvent, clickPaws } from '../events/postEvents.js';
+import { addEvent } from '../events/postEvents.js';
 import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
@@ -23,8 +23,6 @@ const post = async () => {
   // divAllPost.innerHTML = listAllPost(allPosts);
   await listAllPost();
   addEvent();
-  const paws = document.querySelectorAll('.btn-like');
-  clickPaws(paws);
 };
 
 export default post;
