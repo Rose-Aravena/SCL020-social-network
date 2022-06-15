@@ -48,6 +48,7 @@ export const getdataUser = async (uid) => {
   return q;
 };
 
+
 export const addLike = async (id, uidUser) => {
   try{
   await updateDoc(doc(db, 'post', id),{
