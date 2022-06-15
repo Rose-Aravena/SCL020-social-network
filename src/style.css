@@ -216,7 +216,7 @@ footer{
     width: 350px;
     margin: 20px auto 0px auto;
     padding: 5px 10px 0 10px;
-    text-align: justify;
+    text-align: left;
     border-radius: 10px;
     border: 1.5px solid #12406A;
     background-color: #E2EBF6;
@@ -225,7 +225,7 @@ footer{
     font-weight: 800;
 }
 #date{
-    margin: 0 200px 0 0;
+    margin: 0 68% 0 0;
     padding: 20px 0 0 0;
     font-size: 12px;
 }
@@ -237,7 +237,7 @@ footer{
     padding: 8px 0 0 0;
 }
 #count{
-    margin: 0 5px 0 0;
+    margin: 0 10px 0 0;
     padding: 16px 0 0 0;
 }
 /* template creatpost */
