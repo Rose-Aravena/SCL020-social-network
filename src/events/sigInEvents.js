@@ -16,7 +16,6 @@ export const addEvents = () => {
     try {
       const response = await signInUser(auth, email, password);
       console.log(getLocalUser().uid);
-      console.log()
       return onNavigate('/post');
     } catch (error) {
       console.log("ha ocurrido un error al intentar hacer signin", error);

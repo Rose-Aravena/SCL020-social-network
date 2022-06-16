@@ -424,3 +424,10 @@ label{
         width: 315px;
     }
 }
+.lookPost {
+ max-width: 10%;
+ margin: 0 0 auto auto;
+}
+.pic {
+    display: flex;
+}
