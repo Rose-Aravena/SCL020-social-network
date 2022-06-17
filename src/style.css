@@ -209,7 +209,7 @@ footer{
     margin: 1% 1% 2% 87%;
 }
 /* cardpost */
-#allPost{
+#allPost, #allSearch, #allMyPosts {
     margin-bottom: 80px;
 }
 #cardPost{
@@ -307,6 +307,26 @@ label{
 #textOut{
     margin-top: 0px;
     margin-left: 10px;
+    font-size: 10px;
+    font-weight: 600;
+}
+.edit-remove{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0 10px 0;
+}
+.text-edit-remove{
+    display: flex;
+    justify-content: space-around;
+}
+.btn-edit, .btn-remove {
+    height: 40px;
+}
+.texedit{
+    font-size: 10px;
+    font-weight: 600;
+}
+.texremove{
     font-size: 10px;
     font-weight: 600;
 }

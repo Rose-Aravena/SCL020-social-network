@@ -58,10 +58,17 @@ export const onGetPost = (callback) => onSnapshot(postOrder, callback); // actua
 
 export const postsUser = (callback) => {
   const userId = getLocalUser().uid;
-  console.log(userId);
   const q = query(collection(db, 'post'), where('uidUser', '==', userId), orderBy('day', 'desc'), orderBy('hour', 'desc'));
   onSnapshot(q, (callback));
 };
+
+export const hashtagPots = (callback) => {
+  const hashtag = document.getElementById('search').value.toLowerCase();
+  console.log(hashtag);
+  const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
+  onSnapshot(q, (callback));
+}; 
+
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));
   return q;

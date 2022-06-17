@@ -22,12 +22,13 @@ export const addEvents = () => {
     e.preventDefault();
     const titlePost = document.getElementById('titlePost').value;
     const description = document.getElementById('description').value;
-    const hashtag = document.getElementById('hashtag').value;
+    const hashtag = [document.getElementById('hashtag').value.toLowerCase()];
     const day = date.toLocaleDateString();
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
     const usersLikes = [];
     const countPaw = 0;
+    console.log(hashtag);
     console.log(window.localStorage.currentUser.uid);
     console.log(window.localStorage.userName);
     try {
