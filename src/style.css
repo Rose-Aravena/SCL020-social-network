@@ -313,7 +313,7 @@ label{
 .edit-remove{
     display: flex;
     justify-content: space-around;
-    margin: 15px 0 10px 0;
+    margin: 15px 0 0 0;
 }
 .text-edit-remove{
     display: flex;
@@ -322,14 +322,43 @@ label{
 .btn-edit, .btn-remove {
     height: 40px;
 }
-.texedit{
+.texedit, .texremove{
     font-size: 10px;
     font-weight: 600;
+    margin: 0 0 10px 0;
 }
-.texremove{
-    font-size: 10px;
-    font-weight: 600;
+.modalContainer{
+    display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;  
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 }
+.modal{
+    display: flex;
+    width: 350px;
+    margin: 20px auto 0px auto;
+    padding: 5px 10px 15px 10px;
+    text-align: left;
+    border-radius: 10px;
+    background-color: #FFE5B6;
+    flex-direction: column;
+    align-items: center;
+}
+.imgDelete{
+    height: 60px;
+    margin: 0 0 15px 0;
+}
+.show {
+    pointer-events: auto;
+    opacity: 1;
+  }
 /* template search*/
 #search{
     border: 1.5px solid #12406A;

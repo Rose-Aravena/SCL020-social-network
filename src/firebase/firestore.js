@@ -12,6 +12,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
+  deleteDoc
 } from './init.js';
 
 const postsRef = collection(db, 'post');
@@ -87,3 +88,4 @@ export const removeLike = async (id, uidUser) => {
     usersLikes: arrayRemove(uidUser),
   });
 };
+export const deletePost = (id) => deleteDoc(doc(db, "post", id));
