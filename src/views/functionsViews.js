@@ -1,4 +1,4 @@
-import { addLike, removeLike, onGetPost, postsUser, hashtagPots } from "../firebase/firestore.js";
+import { addLike, removeLike, onGetPost, postsUser, hashtagPots, deletePost } from "../firebase/firestore.js";
 import { getLocalUser } from '../utils/utils.js';
 
 export const listAllPost = async () => {
@@ -104,7 +104,16 @@ export const listMyPosts = () => {
               <p class='texremove'>Eliminar</p>
             </div>
           </div>
-          `
+          <div class='modalContainer' id='modalContainer${doc.id}'>
+            <div class='modal'>
+               <p>¿Seguro que deseas eliminar el Post?</p>
+               <img class='imgDelete' src="./icons/eliminarPost.PNG">
+               <div>
+                 <button id='noDelete${doc.id}' class='noDelete'>Cancelar</button>
+                 <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
+              </div>
+            </div>
+          </div>`
       } else {
         container += // html
           `<div id="cardPost">
@@ -128,7 +137,16 @@ export const listMyPosts = () => {
               <p class='texremove'>Eliminar</p>
             </div>
           </div>
-          `
+          <div class='modalContainer' id='modalContainer${doc.id}'>
+             <div class='modal'>
+               <p>¿Seguro que deseas eliminar el Post?</p>
+               <img class='imgDelete' src="./icons/eliminarPost.PNG">
+               <div>
+                 <button id='noDelete${doc.id}' class='noDelete'>Cancelar</button>
+                 <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
+                </div>
+             </div>
+          </div> `
       }
     });
     const divAllMyPost = document.getElementById('allMyPosts');
@@ -157,7 +175,28 @@ export const listMyPosts = () => {
         }
       });
     });
-    // ____
+    // -----btn delete-----
+           
+        // const btnRemove = document.querySelector('.btn-remove');
+        //   btnRemove.forEach(btnR => {
+        //     btnR.addEventListener('click', (e) => {
+        //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
+        //        modalContainer.classList.add('show'); 
+        //      });
+        //    });
+        // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
+        //   btncancelar.forEach(btnC => {
+        //     btnC.addEventListener('click', (e) => {
+        //        const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
+        //         modalContainer.classList.remove('show'); 
+        //       });
+        //     });  
+        const confirDelete = divAllMyPost.querySelectorAll('.btn-remove');
+        confirDelete.forEach(confir => {
+          confir.addEventListener('click', (e) => {
+            deletePost(e.target.dataset.id);
+          })
+        })
   });
 };
 // ----------search----
