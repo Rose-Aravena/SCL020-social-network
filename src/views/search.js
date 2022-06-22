@@ -4,7 +4,7 @@ import { searchPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
   const template = //html
-  `<input id='search' type="text" placeholder="#hashtag">
+    `<input id='search' type="text" placeholder="#hashtag">
   <div id="allSearch"></div>
   <footer>
     <img id="searchButton" src="icons/buscarHashtag.png">
@@ -13,7 +13,6 @@ const getHTMLTemplate = () => {
   </footer>`;
   return template;
 };
-
 
 const search = async () => {
   const template = getHTMLTemplate();

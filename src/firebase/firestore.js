@@ -63,12 +63,12 @@ export const postsUser = (callback) => {
   onSnapshot(q, (callback));
 };
 
-export const hashtagPots = (callback) => {
+export const hashtagPost = (callback) => {
   const hashtag = document.getElementById('search').value.toLowerCase();
   console.log(hashtag);
   const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
   onSnapshot(q, (callback));
-}; 
+};
 
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));
