@@ -1,10 +1,9 @@
 import { getUsers, getdataUser } from './firestore.js';
 
-const query = (info) => { // recorre data y trae campos especificados 
-  const allData = [];  // (guarda dentro de un array) (metodo firestore)
+const query = (info) => { // recorre data y trae campos especificados
+  const allData = []; // (guarda dentro de un array) (metodo firestore)
   info.forEach((doc) => {
-    
-    allData.push(doc.data());//{name: papaitas, email...}
+    allData.push(doc.data()); // {name: papaitas, email...}
   });
   return allData;
 };
@@ -30,10 +29,12 @@ export const arrayUsers = async () => { // array de los usuarios db (traido con 
 //     console.log(error);
 //   }
 // };
-export const getUserInfo = async (uid) => { // trae la info del usuario que le pidamos con el uid dentro de un array
-  try {                                     // usado en auth
+// trae la info del usuario que le pidamos con el uid
+// dentro de un array usado en auth
+export const getUserInfo = async (uid) => {
+  try {
     const response = await getdataUser(uid);
-    const queryUser = query(response); 
+    const queryUser = query(response);
     return queryUser;
   } catch (error) {
     return error;

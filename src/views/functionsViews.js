@@ -1,11 +1,13 @@
-import { addLike, removeLike, onGetPost, postsUser, hashtagPost, deletePost } from "../firebase/firestore.js";
+import {
+  addLike, removeLike, onGetPost, postsUser, hashtagPots, deletePost,
+} from '../firebase/firestore.js';
 import { getLocalUser } from '../utils/utils.js';
 
 export const listAllPost = async () => {
   const uidUser = getLocalUser();
   try {
     onGetPost((querySnapshot) => {
-      let container = "";
+      let container = '';
       querySnapshot.forEach((doc) => {
         const post = doc.data();
 
@@ -24,7 +26,7 @@ export const listAllPost = async () => {
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
         } else {
           container += // html
             `<div class="cardPost">
@@ -39,7 +41,7 @@ export const listAllPost = async () => {
               <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
         }
       });
 
@@ -116,7 +118,7 @@ export const listMyPosts = () => {
                  <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
               </div>
             </div>
-          </div>`
+          </div>`;
       } else {
         container += // html
           `<div class="cardPost">
@@ -149,42 +151,39 @@ export const listMyPosts = () => {
                  <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
                 </div>
              </div>
-          </div> `
+          </div> `;
       }
     });
     const divAllMyPost = document.getElementById('allMyPosts');
     if (window.location.pathname === '/myPost') {
       divAllMyPost.innerHTML = container;
 
-      // btn like nolike
-      const btnLike = divAllMyPost.querySelectorAll('.btn-like');
-
-      btnLike.forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          event.preventDefault();
-          const patita = document.getElementById(`patita${event.target.dataset.id}`);
-          console.log(event.target.dataset.id);
-          if (patita.classList.contains('no')) {
-            addLike(event.target.dataset.id, uidUser.uid);
-            patita.src = './icons/patitalike.PNG';
-            patita.classList.remove('no');
-            patita.classList.add('yes');
-          } else {
-            removeLike(event.target.dataset.id, uidUser.uid);
-            patita.src = './icons/patita.PNG';
-            patita.classList.remove('yes');
-            patita.classList.add('no');
-          }
-        });
+    // btn like nolike
+    const btnLike = divAllMyPost.querySelectorAll('.btn-like');
+    btnLike.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const patita = document.getElementById(`patita${event.target.dataset.id}`);
+        console.log(event.target.dataset.id);
+        if (patita.classList.contains('no')) {
+          addLike(event.target.dataset.id, uidUser.uid);
+          patita.src = './icons/patitalike.PNG';
+          patita.classList.remove('no');
+          patita.classList.add('yes');
+        } else {
+          removeLike(event.target.dataset.id, uidUser.uid);
+          patita.src = './icons/patita.PNG';
+          patita.classList.remove('yes');
+          patita.classList.add('no');
+        }
       });
     }
     // -----btn delete-----
-
     // const btnRemove = document.querySelector('.btn-remove');
     //   btnRemove.forEach(btnR => {
     //     btnR.addEventListener('click', (e) => {
     //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
-    //        modalContainer.classList.add('show'); 
+    //        modalContainer.classList.add('show');
     //      });
     //    });
     // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
@@ -207,9 +206,8 @@ export const listMyPosts = () => {
 // ----------search----
 
 export const searchPost = () => {
-
   const uidUser = getLocalUser();
-  hashtagPost((hashtagSnapshot) => {
+  hashtagPots((hashtagSnapshot) => {
     let container = '';
     hashtagSnapshot.forEach((doc) => {
       const post = doc.data();
@@ -229,7 +227,7 @@ export const searchPost = () => {
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
       } else {
         container += // html
           `<div class="cardPost">
@@ -244,7 +242,7 @@ export const searchPost = () => {
               <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
       }
     });
     const divAllSearch = document.getElementById('allSearch');
@@ -253,7 +251,6 @@ export const searchPost = () => {
       console.log(divAllSearch);
       // btn like nolike
       const btnLike = divAllSearch.querySelectorAll('.btn-like');
-
       btnLike.forEach((btn) => {
         btn.addEventListener('click', (event) => {
           event.preventDefault();

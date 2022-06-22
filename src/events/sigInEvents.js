@@ -18,7 +18,7 @@ export const addEvents = () => {
       console.log(getLocalUser().uid);
       return onNavigate('/post');
     } catch (error) {
-      console.log("ha ocurrido un error al intentar hacer signin", error);
+      console.log('ha ocurrido un error al intentar hacer signin', error);
       return onNavigate('/');
     }
   });

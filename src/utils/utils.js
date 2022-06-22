@@ -18,4 +18,6 @@ const allUidDB = (data) => {
   const uids = data.map((user) => user.uid);
   return uids;
 };
-export { replaceHTML, saveLocalUser, getLocalUser, allUidDB };
+export {
+  replaceHTML, saveLocalUser, getLocalUser, allUidDB,
+};

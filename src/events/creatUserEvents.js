@@ -17,13 +17,13 @@ export const addEvents = () => {
     try {
       newUser = await createUser(auth, email, password);
     } catch (error) {
-      console.log("ocurrio un error con la integracion en el metodo create user ", error);
+      console.log('ocurrio un error con la integracion en el metodo create user ', error);
     }
     try {
       await saveUser(userName, email, newUser.user.uid);
       return onNavigate('/post');
     } catch (error) {
-      console.log("ocurrio un error con la integcion en el saveUser ", error);
+      console.log('ocurrio un error con la integcion en el saveUser ', error);
     }
   });
 };
