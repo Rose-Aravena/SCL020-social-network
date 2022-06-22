@@ -14,7 +14,7 @@ export const addEvents = () => {
     const password = document.getElementById('password').value;
     console.log(email, password);
     try {
-      const response = await signInUser(auth, email, password);
+      await signInUser(auth, email, password);
       console.log(getLocalUser().uid);
       return onNavigate('/post');
     } catch (error) {

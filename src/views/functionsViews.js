@@ -1,5 +1,5 @@
 import {
-  addLike, removeLike, onGetPost, postsUser, hashtagPots, deletePost,
+  addLike, removeLike, onGetPost, postsUser, hashtagPost, deletePost,
 } from '../firebase/firestore.js';
 import { getLocalUser } from '../utils/utils.js';
 
@@ -160,7 +160,7 @@ export const listMyPosts = () => {
 
     // btn like nolike
     const btnLike = divAllMyPost.querySelectorAll('.btn-like');
-    btnLike.forEach(btn => {
+    btnLike.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const patita = document.getElementById(`patita${event.target.dataset.id}`);
@@ -177,7 +177,7 @@ export const listMyPosts = () => {
           patita.classList.add('no');
         }
       });
-    }
+    });
     // -----btn delete-----
     // const btnRemove = document.querySelector('.btn-remove');
     //   btnRemove.forEach(btnR => {
@@ -201,13 +201,14 @@ export const listMyPosts = () => {
         });
       });
     }
-  });
-};
+  };
+});
+}
 // ----------search----
 
 export const searchPost = () => {
   const uidUser = getLocalUser();
-  hashtagPots((hashtagSnapshot) => {
+  hashtagPost((hashtagSnapshot) => {
     let container = '';
     hashtagSnapshot.forEach((doc) => {
       const post = doc.data();
