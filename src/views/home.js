@@ -4,7 +4,7 @@ import { replaceHTML } from '../utils/utils.js';
 import addEvents from '../events/homeEvents.js';
 
 const getHTMLTemplate = () => {
-  const template = //html
+  const template = // html
     ` <div id='home'>
     <div>
     <img id='logo' src='icons/logo.png'>

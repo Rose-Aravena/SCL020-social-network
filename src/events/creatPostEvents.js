@@ -2,7 +2,7 @@ import { onNavigate } from '../router/routes.js';
 import { savePost } from '../firebase/firestore.js';
 import { getLocalUser } from '../utils/utils.js';
 
-let date = new Date(); // para guardar da fecha y hora en la db del post
+const date = new Date(); // para guardar da fecha y hora en la db del post
 
 export const addEvents = () => {
   const cancel = document.getElementById('cancelButton');
@@ -17,7 +17,9 @@ export const addEvents = () => {
   search.addEventListener('click', () => {
     onNavigate('/search');
   });
-  const lookPost = document.getElementById('formPost');  // formulario con los datos para guardar en la coleccion post
+
+  // formulario con los datos para guardar en la coleccion post
+  const lookPost = document.getElementById('formPost');
   lookPost.addEventListener('submit', async (e) => {
     e.preventDefault();
     const titlePost = document.getElementById('titlePost').value;

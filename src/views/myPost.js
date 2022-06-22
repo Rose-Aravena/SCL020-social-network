@@ -3,7 +3,7 @@ import { addEvent } from '../events/myPostEvents.js';
 import { listMyPosts } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
-  const template = //html
+  const template = // html
     `<img id="out" src="icons/out.png">
   <p id='textOut'>Cerrar sesión</p>
   <div id="allMyPosts"></div>

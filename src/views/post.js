@@ -3,7 +3,7 @@ import { addEvent } from '../events/postEvents.js';
 import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
-  const template = //html
+  const template = // html
     `<img id="myPost" src="icons/verPosts.png">
    <p id='textMyPost'> Mis post </p>
   <div id="allPost"></div>

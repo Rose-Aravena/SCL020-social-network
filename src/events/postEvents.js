@@ -1,7 +1,6 @@
 import { onNavigate } from '../router/routes.js';
 
 export const addEvent = async () => {
-
   const search = document.getElementById('searchButton');
   search.addEventListener('click', () => {
     onNavigate('/search');

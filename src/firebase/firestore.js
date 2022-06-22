@@ -12,7 +12,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
-  deleteDoc
+  deleteDoc,
 } from './init.js';
 
 const postsRef = collection(db, 'post');
@@ -68,7 +68,7 @@ export const hashtagPots = (callback) => {
   console.log(hashtag);
   const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
   onSnapshot(q, (callback));
-}; 
+};
 
 export const getdataUser = async (uid) => {
   const q = await getDocs(query(collection(db, 'user'), where('uid', '==', uid)));
@@ -88,4 +88,4 @@ export const removeLike = async (id, uidUser) => {
     usersLikes: arrayRemove(uidUser),
   });
 };
-export const deletePost = (id) => deleteDoc(doc(db, "post", id));
+export const deletePost = (id) => deleteDoc(doc(db, 'post', id));

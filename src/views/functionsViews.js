@@ -1,11 +1,13 @@
-import { addLike, removeLike, onGetPost, postsUser, hashtagPots, deletePost } from "../firebase/firestore.js";
+import {
+  addLike, removeLike, onGetPost, postsUser, hashtagPots, deletePost,
+} from '../firebase/firestore.js';
 import { getLocalUser } from '../utils/utils.js';
 
 export const listAllPost = async () => {
   const uidUser = getLocalUser();
   try {
     onGetPost((querySnapshot) => {
-      let container = "";
+      let container = '';
       querySnapshot.forEach((doc) => {
         const post = doc.data();
 
@@ -24,7 +26,7 @@ export const listAllPost = async () => {
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
         } else {
           container += // html
             `<div id="cardPost">
@@ -39,7 +41,7 @@ export const listAllPost = async () => {
               <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
         }
       });
 
@@ -77,7 +79,7 @@ export const listAllPost = async () => {
 export const listMyPosts = () => {
   const uidUser = getLocalUser();
   postsUser((qSnapshot) => {
-    let container = "";
+    let container = '';
     qSnapshot.forEach((doc) => {
       const post = doc.data();
       const usersLikes = post.usersLikes;
@@ -113,7 +115,7 @@ export const listMyPosts = () => {
                  <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
               </div>
             </div>
-          </div>`
+          </div>`;
       } else {
         container += // html
           `<div id="cardPost">
@@ -146,7 +148,7 @@ export const listMyPosts = () => {
                  <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
                 </div>
              </div>
-          </div> `
+          </div> `;
       }
     });
     const divAllMyPost = document.getElementById('allMyPosts');
@@ -154,7 +156,6 @@ export const listMyPosts = () => {
 
     // btn like nolike
     const btnLike = divAllMyPost.querySelectorAll('.btn-like');
-    
     btnLike.forEach(btn => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
@@ -165,38 +166,35 @@ export const listMyPosts = () => {
           patita.src = './icons/patitalike.PNG';
           patita.classList.remove('no');
           patita.classList.add('yes');
-          count.textContent++;
         } else {
           removeLike(event.target.dataset.id, uidUser.uid);
           patita.src = './icons/patita.PNG';
           patita.classList.remove('yes');
           patita.classList.add('no');
-          count.textContent--;
         }
       });
     });
     // -----btn delete-----
-           
-        // const btnRemove = document.querySelector('.btn-remove');
-        //   btnRemove.forEach(btnR => {
-        //     btnR.addEventListener('click', (e) => {
-        //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
-        //        modalContainer.classList.add('show'); 
-        //      });
-        //    });
-        // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
-        //   btncancelar.forEach(btnC => {
-        //     btnC.addEventListener('click', (e) => {
-        //        const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
-        //         modalContainer.classList.remove('show'); 
-        //       });
-        //     });  
-        const confirDelete = divAllMyPost.querySelectorAll('.btn-remove');
-        confirDelete.forEach(confir => {
-          confir.addEventListener('click', (e) => {
-            deletePost(e.target.dataset.id);
-          })
-        })
+    // const btnRemove = document.querySelector('.btn-remove');
+    //   btnRemove.forEach(btnR => {
+    //     btnR.addEventListener('click', (e) => {
+    //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
+    //        modalContainer.classList.add('show');
+    //      });
+    //    });
+    // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
+    //   btncancelar.forEach(btnC => {
+    //     btnC.addEventListener('click', (e) => {
+    //        const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
+    //         modalContainer.classList.remove('show');
+    //       });
+    //     });
+    const confirDelete = divAllMyPost.querySelectorAll('.btn-remove');
+    confirDelete.forEach(confir => {
+      confir.addEventListener('click', (e) => {
+        deletePost(e.target.dataset.id);
+      });
+    });
   });
 };
 // ----------search----
@@ -204,7 +202,7 @@ export const listMyPosts = () => {
 export const searchPost = () => {
   const uidUser = getLocalUser();
   hashtagPots((hashtagSnapshot) => {
-    let container = "";
+    let container = '';
     hashtagSnapshot.forEach((doc) => {
       const post = doc.data();
       const usersLikes = post.usersLikes;
@@ -222,7 +220,7 @@ export const searchPost = () => {
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
       } else {
         container += // html
           `<div id="cardPost">
@@ -237,7 +235,7 @@ export const searchPost = () => {
               <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
             </picture>
           </div>
-        </div>`
+        </div>`;
       }
     });
     const divAllSearch = document.getElementById('allSearch');
@@ -245,7 +243,6 @@ export const searchPost = () => {
 
     // btn like nolike
     const btnLike = divAllSearch.querySelectorAll('.btn-like');
-    
     btnLike.forEach(btn => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();

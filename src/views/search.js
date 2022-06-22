@@ -3,7 +3,7 @@ import { addEvent } from '../events/myPostEvents.js';
 import { searchPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
-  const template = //html
+  const template = // html
   `<input id='search' type="text" placeholder="#hashtag">
   <div id="allSearch"></div>
   <footer>
@@ -13,7 +13,6 @@ const getHTMLTemplate = () => {
   </footer>`;
   return template;
 };
-
 
 const search = async () => {
   const template = getHTMLTemplate();
