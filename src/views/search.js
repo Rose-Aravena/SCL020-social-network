@@ -3,8 +3,8 @@ import { addEvent } from '../events/myPostEvents.js';
 import { searchPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
-  const template = // html
-  `<input id='search' type="text" placeholder="#hashtag">
+  const template = //html
+    `<input id='search' type="text" placeholder="#hashtag">
   <div id="allSearch"></div>
   <footer>
     <img id="searchButton" src="icons/buscarHashtag.png">
