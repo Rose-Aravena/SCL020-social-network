@@ -212,7 +212,7 @@ footer{
 #allPost, #allSearch, #allMyPosts {
     margin-bottom: 80px;
 }
-#cardPost{
+.cardPost{
     width: 350px;
     margin: 20px auto 0px auto;
     padding: 5px 10px 0 10px;
@@ -221,22 +221,22 @@ footer{
     border: 1.5px solid #12406A;
     background-color: #E2EBF6;
 }
-#tittle{
+.tittle{
     font-weight: 800;
 }
-#date{
+.date{
     margin: 0 68% 0 0;
     padding: 20px 0 0 0;
     font-size: 12px;
 }
-#dateLike{
+.dateLike{
     display: flex;
 }
 .btn-like{
     height: 40px;
     padding: 8px 0 0 0;
 }
-#count{
+.count{
     margin: 0 10px 0 0;
     padding: 16px 0 0 0;
 }
@@ -434,7 +434,7 @@ label{
         margin: 10px;
     }
     /* cardpost template*/
-    #cardPost{
+    .cardPost{
         width: 250px;
     }
 }
@@ -469,7 +469,7 @@ label{
         padding: 8px 30px;
     }
     /* cardpost template*/
-    #cardPost{
+    .cardPost{
         width: 315px;
     }
 }

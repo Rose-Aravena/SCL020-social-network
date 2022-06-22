@@ -3,9 +3,7 @@
 import { onNavigate } from '../router/routes.js';
 
 if (window.localStorage.userName === undefined) {
-    onNavigate('/');
-  } else {
-    onNavigate('/post');
-  }
-
-
+  onNavigate('/');
+} else {
+  onNavigate('/post');
+}
