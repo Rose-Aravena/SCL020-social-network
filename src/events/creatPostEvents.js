@@ -29,7 +29,6 @@ export const addEvents = () => {
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
     const usersLikes = [];
-    const countPaw = 0;
     console.log(hashtag);
     console.log(window.localStorage.currentUser.uid);
     console.log(window.localStorage.userName);
@@ -43,7 +42,6 @@ export const addEvents = () => {
         uidUser.uid,
         window.localStorage.userName,
         usersLikes,
-        countPaw,
       );
       return onNavigate('/post');
     } catch (error) {

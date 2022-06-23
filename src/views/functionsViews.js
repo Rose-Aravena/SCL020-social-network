@@ -179,30 +179,28 @@ export const listMyPosts = () => {
       });
     });
     // -----btn delete-----
-    // const btnRemove = document.querySelector('.btn-remove');
-    //   btnRemove.forEach(btnR => {
+    // const btnRemove = divAllMyPost.querySelectorAll('.btn-remove');
+    // btnRemove.forEach((btnR) => {
     //     btnR.addEventListener('click', (e) => {
     //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
     //        modalContainer.classList.add('show');
-    //      });
-    //    });
+    //     });
+    // });
     // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
     //   btncancelar.forEach(btnC => {
     //     btnC.addEventListener('click', (e) => {
     //        const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
     //         modalContainer.classList.remove('show'); 
     //       });
-    //     });  
-    if (window.location.pathname === 'myPost') {
+    //     });
       const confirDelete = divAllMyPost.querySelectorAll('.btn-remove');
       confirDelete.forEach((confirm) => {
         confirm.addEventListener('click', (e) => {
           deletePost(e.target.dataset.id);
         });
       });
-    }
-  };
-});
+    };
+  });
 }
 // ----------search----
 
