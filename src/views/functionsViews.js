@@ -18,7 +18,7 @@ export const listAllPost = async () => {
            <p><b>${post.userName}</b> dice:</p>
            <p class="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
-           <p class="text">${post.hashtag}</p>
+           <p class="text">${post.hashtag.join(' ')}</p>
           <div class="dateLike">
             <p class="date">${post.day}</p>
             <span class="count">${usersLikes.length}</span>
@@ -33,7 +33,7 @@ export const listAllPost = async () => {
            <p><b>${post.userName} </b>dice:</p>
            <p class="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
-           <p class="text">${post.hashtag}</p>
+           <p class="text">${post.hashtag.join(' ')}</p>
           <div class="dateLike">
             <p class="date">${post.day}</p>
             <span class="count">${usersLikes.length}</span>
@@ -92,7 +92,7 @@ export const listMyPosts = () => {
             <p><b>${post.userName}</b> dice:</p>
             <p class="tittle">${post.titlePost}</p>
             <p class="text">${post.description}</p>
-            <p class="text">${post.hashtag}</p>
+            <p class="text">${post.hashtag.join(' ')}</p>
             <div class="dateLike">
              <p class="date">${post.day}</p>
               <span class="count">${usersLikes.length}</span>
@@ -125,7 +125,7 @@ export const listMyPosts = () => {
             <p><b>${post.userName} </b>dice:</p>
             <p class="tittle">${post.titlePost}</p>
             <p class="text">${post.description}</p>
-            <p class="text">${post.hashtag}</p>
+            <p class="text">${post.hashtag.join(' ')}</p>
             <div class="dateLike">
                <p class="date">${post.day}</p>
                <span class="count">${usersLikes.length}</span>
@@ -158,50 +158,51 @@ export const listMyPosts = () => {
     if (window.location.pathname === '/myPost') {
       divAllMyPost.innerHTML = container;
 
-    // btn like nolike
-    const btnLike = divAllMyPost.querySelectorAll('.btn-like');
-    btnLike.forEach((btn) => {
-      btn.addEventListener('click', (event) => {
-        event.preventDefault();
-        const patita = document.getElementById(`patita${event.target.dataset.id}`);
-        console.log(event.target.dataset.id);
-        if (patita.classList.contains('no')) {
-          addLike(event.target.dataset.id, uidUser.uid);
-          patita.src = './icons/patitalike.PNG';
-          patita.classList.remove('no');
-          patita.classList.add('yes');
-        } else {
-          removeLike(event.target.dataset.id, uidUser.uid);
-          patita.src = './icons/patita.PNG';
-          patita.classList.remove('yes');
-          patita.classList.add('no');
-        }
+      // btn like nolike
+      const btnLike = divAllMyPost.querySelectorAll('.btn-like');
+      btnLike.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          event.preventDefault();
+          const patita = document.getElementById(`patita${event.target.dataset.id}`);
+          console.log(event.target.dataset.id);
+          if (patita.classList.contains('no')) {
+            addLike(event.target.dataset.id, uidUser.uid);
+            patita.src = './icons/patitalike.PNG';
+            patita.classList.remove('no');
+            patita.classList.add('yes');
+          } else {
+            removeLike(event.target.dataset.id, uidUser.uid);
+            patita.src = './icons/patita.PNG';
+            patita.classList.remove('yes');
+            patita.classList.add('no');
+          }
+        });
       });
-    });
-    // -----btn delete-----
-    // const btnRemove = divAllMyPost.querySelectorAll('.btn-remove');
-    // btnRemove.forEach((btnR) => {
-    //     btnR.addEventListener('click', (e) => {
-    //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
-    //        modalContainer.classList.add('show');
-    //     });
-    // });
-    // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
-    //   btncancelar.forEach(btnC => {
-    //     btnC.addEventListener('click', (e) => {
-    //        const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
-    //         modalContainer.classList.remove('show'); 
-    //       });
-    //     });
+      // -----btn delete-----
+      // const btnRemove = divAllMyPost.querySelectorAll('.btn-remove');
+      // btnRemove.forEach((btnR) => {
+      //     btnR.addEventListener('click', (e) => {
+      //       const modalContainer = document.getElementById(`modalContainer${e.target.dataset.id}`);
+      //        modalContainer.classList.add('show');
+      //     });
+      // });
+      // const btncancelar = divAllMyPost.querySelectorAll('.noDelete');
+      //   btncancelar.forEach(btnC => {
+      //     btnC.addEventListener('click', (e) => {
+      //        const modalContainer =
+      // document.getElementById(`modalContainer${e.target.dataset.id}`);
+      //         modalContainer.classList.remove('show');
+      //       });
+      //     });
       const confirDelete = divAllMyPost.querySelectorAll('.btn-remove');
       confirDelete.forEach((confirm) => {
         confirm.addEventListener('click', (e) => {
           deletePost(e.target.dataset.id);
         });
       });
-    };
+    }
   });
-}
+};
 // ----------search----
 
 export const searchPost = () => {
@@ -218,7 +219,7 @@ export const searchPost = () => {
            <p><b>${post.userName}</b> dice:</p>
            <p class="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
-           <p class="text">${post.hashtag}</p>
+           <p class="text">${post.hashtag.join(' ')}</p>
           <div class="dateLike">
             <p class="date">${post.day}</p>
             <span class="count">${usersLikes.length}</span>
@@ -233,7 +234,7 @@ export const searchPost = () => {
            <p><b>${post.userName} </b>dice:</p>
            <p class="tittle">${post.titlePost}</p>
            <p class="text">${post.description}</p>
-           <p class="text">${post.hashtag}</p>
+           <p class="text">${post.hashtag.join(' ')}</p>
           <div class="dateLike">
             <p class="date">${post.day}</p>
             <span class="count">${usersLikes.length}</span>

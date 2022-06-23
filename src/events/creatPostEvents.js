@@ -3,7 +3,16 @@ import { savePost } from '../firebase/firestore.js';
 import { getLocalUser } from '../utils/utils.js';
 
 const date = new Date(); // para guardar da fecha y hora en la db del post
-
+const probarEntrada = (cadena) => {
+  let subcadena;
+  const space = /\s/;
+  if (space.test(cadena)) {
+    subcadena = cadena.split(space);
+  } else {
+    subcadena = [cadena];
+  }
+  return subcadena;
+};
 export const addEvents = () => {
   const cancel = document.getElementById('cancelButton');
   cancel.addEventListener('click', () => {
@@ -24,14 +33,13 @@ export const addEvents = () => {
     e.preventDefault();
     const titlePost = document.getElementById('titlePost').value;
     const description = document.getElementById('description').value;
-    const hashtag = [document.getElementById('hashtag').value.toLowerCase()];
+    const hashtag1 = document.getElementById('hashtag').value.toLowerCase();
     const day = date.toLocaleDateString();
     const hour = date.toLocaleTimeString();
     const uidUser = getLocalUser();
     const usersLikes = [];
+    const hashtag = probarEntrada(hashtag1);
     console.log(hashtag);
-    console.log(window.localStorage.currentUser.uid);
-    console.log(window.localStorage.userName);
     try {
       await savePost(
         titlePost,
@@ -49,3 +57,4 @@ export const addEvents = () => {
     }
   });
 };
+
