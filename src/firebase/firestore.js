@@ -36,7 +36,6 @@ export const savePost = (
   uidUser,
   userName,
   usersLikes,
-  countPaw,
 ) => {
   addDoc(
     collection(db, 'post'),
@@ -49,7 +48,6 @@ export const savePost = (
       uidUser,
       userName,
       usersLikes,
-      countPaw,
     },
   );
 };

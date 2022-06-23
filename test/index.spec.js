@@ -1,7 +1,7 @@
 import { auth, signInWithEmailAndPassword } from '../src/firebase/init.js';
 import { signInUser } from '../src/firebase/auth.js';
 
-jest.mock('../src/firebase/init.js', () => {
+jest.mock('../src/firebase/auth.js', () => {
   return {
     auth: jest.fn(() => { // La funcion jest.fn <- Crea una funcion interceptada por JEST
       return { auth: 'TEST' };
