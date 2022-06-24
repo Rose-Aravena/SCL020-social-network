@@ -10,18 +10,17 @@ export const addEvents = () => {
   });
   const send = document.getElementById('creatSend'); // guardando el user en db
   send.addEventListener('click', async () => {
-    const userName = document.getElementById('userName').value;
+    const name = document.getElementById('userName').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     let newUser;
     try {
       newUser = await createUser(auth, email, password);
-      return newUser;
     } catch (error) {
       console.log('ocurrio un error con la integracion en el metodo create user ', error);
     }
     try {
-      await saveUser(userName, email, newUser.user.uid);
+      await saveUser(name, email, newUser.user.uid);
       return onNavigate('/post');
     } catch (error) {
       return console.log('ocurrio un error con la integcion en el saveUser ', error);
