@@ -18,19 +18,14 @@ import {
 const postsRef = collection(db, 'post');
 const postOrder = query(postsRef, orderBy('day', 'desc'), orderBy('hour', 'desc'));
 export const saveUser = async (name, email, uid) => {
-  try {
-    const data = await addDoc(
-      collection(db, 'user'),
-      {
-        name,
-        email,
-        uid,
-      },
-    );
-    return data;
-  } catch (error) {
-    return error;
-  }
+  addDoc(
+    collection(db, 'user'),
+    {
+      name,
+      email,
+      uid,
+    },
+  );
 };
 export const savePost = (
   titlePost,
@@ -78,13 +73,9 @@ export const getdataUser = async (uid) => {
   return q;
 };
 export const addLike = async (id, uidUser) => {
-  try {
-    await updateDoc(doc(db, 'post', id), {
-      usersLikes: arrayUnion(uidUser),
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  await updateDoc(doc(db, 'post', id), {
+    usersLikes: arrayUnion(uidUser),
+  });
 };
 export const removeLike = async (id, uidUser) => {
   await updateDoc(doc(db, 'post', id), {

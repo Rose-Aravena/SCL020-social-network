@@ -9,6 +9,15 @@ import {
   signOut,
   addDoc,
   collection,
+  getDocs,
+  query,
+  where,
+  db,
+  onSnapshot,
+  updateDoc,
+  arrayUnion,
+  doc,
+  arrayRemove,
 } from '../src/firebase/init.js';
 import {
   signInUser,
@@ -16,7 +25,15 @@ import {
   loginGoogle,
   loginOut,
 } from '../src/firebase/auth.js';
-import { saveUser, savePost } from '../src/firebase/firestore.js';
+import {
+  saveUser,
+  savePost,
+  getdataUser,
+  postsUser,
+  hashtagPost,
+  addLike,
+  removeLike,
+} from '../src/firebase/firestore.js';
 
 const userName = 'Potato';
 const uid = 'iauiuanjahjaanh';
@@ -28,6 +45,7 @@ const hashtag = ['#happy'];
 const day = '24-06-2020';
 const hour = '08:59:30';
 const usersLikes = ['kjas77shajhauy7yah'];
+const id = 'kajkjakjakjak';
 
 jest.mock('../src/firebase/init.js', () => {
   return {
@@ -64,6 +82,13 @@ jest.mock('../src/firebase/init.js', () => {
       return Promise.resolve(undefined);
     }),
     addDoc: jest.fn(),
+    getDocs: jest.fn(),
+    where: jest.fn(),
+    db: jest.fn(),
+    doc: jest.fn(),
+    updateDoc: jest.fn(),
+    arrayUnion: jest.fn(),
+    arrayRemove: jest.fn(),
   };
 });
 
@@ -144,5 +169,39 @@ describe('Test for the savePost function', () => {
   it('Should call addDoc', async () => {
     await savePost(titlePost, description, hashtag, day, hour, uid, userName, usersLikes);
     expect(addDoc).toHaveBeenCalled();
+  });
+});
+describe('Test for the getdataUser function', () => {
+  it('Shoul call getDocs', async () => {
+    await getdataUser(uid);
+    expect(getDocs).toHaveBeenCalled();
+  });
+});
+// describe('Tests for the postUser function', () => {
+//   const callback = 'someFunction';
+
+//   it('Should call onSnapshot', () => {
+//     postsUser(callback);
+//     expect(onSnapshot).toHaveBeenCalled();
+//   });
+//   it('Should call onSnapshot with the query reference argument', () => {
+//     const userId = uid;
+//     const q = query(collection(db, 'post'), where('uidUser', '==', userId), orderBy('day', 'desc'), orderBy('hour', 'desc'));
+//     postsUser(callback);
+//     expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+//   });
+// });
+describe('Test for addLike function', () => {
+  // const refDoc = doc(db, 'post', id);
+  it('Should call updateDoc', async () => {
+    await addLike(id, uid);
+    expect(updateDoc).toHaveBeenCalled();
+  });
+});
+describe('Test for removeLike function', () => {
+  // const refDoc = doc(db, 'post', id);
+  it('Should call updateDoc', async () => {
+    await removeLike(id, uid);
+    expect(updateDoc).toHaveBeenCalled();
   });
 });
