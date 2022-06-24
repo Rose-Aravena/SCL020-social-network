@@ -4,6 +4,7 @@ import { loginGoogle } from '../firebase/auth.js';
 import { arrayUsers } from '../firebase/getDocsFirebase.js';
 import { getLocalUser, allUidDB } from '../utils/utils.js';
 import { saveUser } from '../firebase/firestore.js';
+import { auth } from '../firebase/init.js';
 
 const addEvents = () => {
   const SignIn = document.getElementById('signIn');
@@ -17,7 +18,7 @@ const addEvents = () => {
     let uidUserSigned;
     let responseGoogle;
     try {
-      responseGoogle = await loginGoogle();
+      responseGoogle = await loginGoogle(auth);
       console.log(responseGoogle);
     } catch (error) {
       return error;

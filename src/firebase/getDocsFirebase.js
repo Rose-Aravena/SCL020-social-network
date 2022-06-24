@@ -19,18 +19,6 @@ export const arrayUsers = async () => { // array de los usuarios db (traido con 
   }
 };
 
-// export const arrayPosts = async () => { // array de los post db (traido con el metodo anterior)
-//   try {
-//     const response = await getPost();
-//     const queryPost = query(response);
-//     console.log(queryPost.id)
-//     return queryPost;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// trae la info del usuario que le pidamos con el uid
-// dentro de un array usado en auth
 export const getUserInfo = async (uid) => {
   try {
     const response = await getdataUser(uid);

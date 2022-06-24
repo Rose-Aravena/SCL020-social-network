@@ -30,7 +30,7 @@ const createUser = async (auth, email, password) => {
   }
 };
 
-const loginGoogle = async () => {
+const loginGoogle = async (auth) => {
   try {
     const response = await signInWithPopup(auth, provider);
     console.log(response);
@@ -40,7 +40,7 @@ const loginGoogle = async () => {
   }
 };
 
-const loginOut = async () => {
+const loginOut = async (auth) => {
   try {
     const response = await signOut(auth);
     console.log(response);
@@ -49,7 +49,6 @@ const loginOut = async () => {
     throw error.message;
   }
 };
-
 onAuthStateChanged(auth, async (user) => { // observador
   if (user) {
     console.log(`userUid= ${user.uid} evento siempre presente`);
@@ -58,6 +57,7 @@ onAuthStateChanged(auth, async (user) => { // observador
     saveLocalUser(user); // guardo como string el user que devuelve el
     // evento que esccuha un inicio de sesion
     const signedUser = await getUserInfo(user.uid);
+    console.log(await signedUser);
     window.localStorage.userName = signedUser[0].name;
     window.localStorage.userEmail = signedUser[0].email;
   } else {

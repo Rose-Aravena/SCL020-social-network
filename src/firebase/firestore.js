@@ -17,15 +17,20 @@ import {
 
 const postsRef = collection(db, 'post');
 const postOrder = query(postsRef, orderBy('day', 'desc'), orderBy('hour', 'desc'));
-export const saveUser = (name, email, uid) => {
-  addDoc(
-    collection(db, 'user'),
-    {
-      name,
-      email,
-      uid,
-    },
-  );
+export const saveUser = async (name, email, uid) => {
+  try {
+    const data = await addDoc(
+      collection(db, 'user'),
+      {
+        name,
+        email,
+        uid,
+      },
+    );
+    return data;
+  } catch (error) {
+    return error;
+  }
 };
 export const savePost = (
   titlePost,
