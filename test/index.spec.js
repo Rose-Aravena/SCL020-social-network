@@ -34,6 +34,8 @@ import {
   addLike,
   removeLike,
 } from '../src/firebase/firestore.js';
+import { allUidDB } from '../src/utils/utils.js';
+import { queryInfo } from '../src/firebase/getDocsFirebase.js';
 
 const userName = 'Potato';
 const uid = 'iauiuanjahjaanh';
@@ -213,5 +215,54 @@ describe('Tests for the hashtagPost function', () => {
     const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
     hashtagPost(hashtag, callback);
     expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+  });
+});
+describe('Test for allUidDB function', () => {
+  const allData = [
+    {
+      name: 'potatoes',
+      uid: 'poaisushshiay',
+    },
+    {
+      name: 'chips',
+      uid: 'iusuhsttsyh',
+    },
+  ];
+  const uids = ['poaisushshiay', 'iusuhsttsyh'];
+  it('Should the function return an array with all the uids', () => {
+    expect(allUidDB(allData)).toStrictEqual(uids);
+  });
+});
+describe('Test for the function queryInfo', () => {
+  const info = [
+    {
+      data: () => {
+        return {
+          name: 'potatoes',
+          uid: 'poaisushshiay',
+        };
+      },
+    },
+    {
+      data: () => {
+        return {
+          name: 'chips',
+          uid: 'iusuhsttsyh',
+        };
+      },
+    },
+  ];
+  const allData = [
+    {
+      name: 'potatoes',
+      uid: 'poaisushshiay',
+    },
+    {
+      name: 'chips',
+      uid: 'iusuhsttsyh',
+    },
+  ];
+  it('Should the function queryInfo return an array with data', () => {
+    expect(queryInfo(info)).toStrictEqual(allData);
   });
 });
