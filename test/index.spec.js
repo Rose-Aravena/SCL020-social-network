@@ -46,6 +46,8 @@ const day = '24-06-2020';
 const hour = '08:59:30';
 const usersLikes = ['kjas77shajhauy7yah'];
 const id = 'kajkjakjakjak';
+const some = 'textInHastag';
+const callback = 'someFunction';
 
 jest.mock('../src/firebase/init.js', () => {
   return {
@@ -89,6 +91,7 @@ jest.mock('../src/firebase/init.js', () => {
     updateDoc: jest.fn(),
     arrayUnion: jest.fn(),
     arrayRemove: jest.fn(),
+    onSnapshot: jest.fn(),
   };
 });
 
@@ -177,22 +180,18 @@ describe('Test for the getdataUser function', () => {
     expect(getDocs).toHaveBeenCalled();
   });
 });
-// describe('Tests for the postUser function', () => {
-//   const callback = 'someFunction';
-
-//   it('Should call onSnapshot', () => {
-//     postsUser(callback);
-//     expect(onSnapshot).toHaveBeenCalled();
-//   });
-//   it('Should call onSnapshot with the query reference argument', () => {
-//     const userId = uid;
-//     const q = query(collection(db, 'post'), where('uidUser', '==', userId), orderBy('day', 'desc'), orderBy('hour', 'desc'));
-//     postsUser(callback);
-//     expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
-//   });
-// });
+describe('Tests for the postUser function', () => {
+  it('Should call onSnapshot', () => {
+    postsUser(callback);
+    expect(onSnapshot).toHaveBeenCalled();
+  });
+  it('Should call onSnapshot with the query reference argument', () => {
+    const q = query(collection(db, 'post'), where('uidUser', '==', uid), orderBy('day', 'desc'), orderBy('hour', 'desc'));
+    postsUser(uid, callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+  });
+});
 describe('Test for addLike function', () => {
-  // const refDoc = doc(db, 'post', id);
   it('Should call updateDoc', async () => {
     await addLike(id, uid);
     expect(updateDoc).toHaveBeenCalled();
@@ -203,5 +202,16 @@ describe('Test for removeLike function', () => {
   it('Should call updateDoc', async () => {
     await removeLike(id, uid);
     expect(updateDoc).toHaveBeenCalled();
+  });
+});
+describe('Tests for the hashtagPost function', () => {
+  it('Should call onSnapshot', () => {
+    hashtagPost(some, callback);
+    expect(onSnapshot).toHaveBeenCalled();
+  });
+  it('Should call onSnapshot with the query reference argument', () => {
+    const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
+    hashtagPost(hashtag, callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
   });
 });

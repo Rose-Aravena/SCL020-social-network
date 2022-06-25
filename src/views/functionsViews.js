@@ -81,12 +81,13 @@ export const listAllPost = async () => {
 
 export const listMyPosts = () => {
   const uidUser = getLocalUser();
-  postsUser((qSnapshot) => {
+  const uid = uidUser.uid;
+  postsUser(uid, (qSnapshot) => {
     let container = '';
     qSnapshot.forEach((doc) => {
       const post = doc.data();
       const usersLikes = post.usersLikes;
-      if (usersLikes.includes(uidUser.uid)) {
+      if (usersLikes.includes(uid)) {
         container += // html
           `<div class="cardPost">
             <p><b>${post.userName}</b> dice:</p>
@@ -207,11 +208,13 @@ export const listMyPosts = () => {
 
 export const searchPost = () => {
   const uidUser = getLocalUser();
-  hashtagPost((hashtagSnapshot) => {
+  const hashtag = document.getElementById('search').value.toLowerCase();
+  console.log(hashtag);
+  hashtagPost(hashtag, (hashtagSnapshot) => {
     let container = '';
     hashtagSnapshot.forEach((doc) => {
       const post = doc.data();
-      console.log(post);
+      console.log(post.hashtag);
       const usersLikes = post.usersLikes;
       if (usersLikes.includes(uidUser.uid)) {
         container += // html

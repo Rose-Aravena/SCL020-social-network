@@ -55,14 +55,12 @@ export const getUsers = () => getDocs(collection(db, 'user'));
 export const getPosts = () => getDocs(postOrder);
 export const onGetPost = (callback) => onSnapshot(postOrder, callback); // actualizar en tiempo real
 
-export const postsUser = (callback) => {
-  const userId = getLocalUser().uid;
+export const postsUser = (userId, callback) => {
   const q = query(collection(db, 'post'), where('uidUser', '==', userId), orderBy('day', 'desc'), orderBy('hour', 'desc'));
   onSnapshot(q, (callback));
 };
 
-export const hashtagPost = (callback) => {
-  const hashtag = document.getElementById('search').value.toLowerCase();
+export const hashtagPost = (hashtag, callback) => {
   console.log(hashtag);
   const q = query(collection(db, 'post'), where('hashtag', 'array-contains-any', [hashtag]), orderBy('day', 'desc'), orderBy('hour', 'desc'));
   onSnapshot(q, (callback));
