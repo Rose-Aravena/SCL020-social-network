@@ -487,10 +487,13 @@ label{
     color: red;
     text-align: center;
 }
-.fixed {
+.fix{
     position: sticky;
     top:0;
     background-color: #ADBED2;
     padding: 1px;
+}
+#textMyPost{
+    padding-bottom: 1px;
 }
 
