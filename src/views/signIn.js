@@ -9,6 +9,7 @@ const getHTMLTemplate = () => {
   <img class='backIcon' id='back' src='icons/volver.png' alt="MDN">
   <p><strong>Volver</strong></p>
   </div>
+  <div class= 'textError' id='textSignIn'></div>
   <div class='containerInputs'>
   <h1 class='title'>Inicia Sesión</h1>
   <h3 class='subTitle'>Email:</h3>

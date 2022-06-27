@@ -480,3 +480,13 @@ label{
 .pic {
     display: flex;
 }
+.textError {
+    color: red;
+    text-align: center;
+}
+.fixed {
+    position: sticky;
+    top:0;
+    background-color: #ADBED2;
+    padding: 1px;
+}

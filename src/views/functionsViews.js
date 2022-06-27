@@ -10,7 +10,6 @@ export const listAllPost = async () => {
       let container = '';
       querySnapshot.forEach((doc) => {
         const post = doc.data();
-
         const usersLikes = post.usersLikes;
         if (usersLikes.includes(uidUser.uid)) {
           container += // html
@@ -102,11 +101,11 @@ export const listMyPosts = () => {
              </picture>
             </div>
             <picture class='edit-remove'>
-              <img id="edit${doc.id}" class ="btn-edit" data-id="${doc.id}" src="./icons/edita.PNG">
+              
               <img id="remove${doc.id}" class ="btn-remove" data-id="${doc.id}" src="./icons/eliminar.PNG">
             </picture>
             <div class='text-edit-remove'>
-              <p class='texedit'>Editar</p>
+
               <p class='texremove'>Eliminar</p>
             </div>
           </div>
@@ -135,11 +134,11 @@ export const listMyPosts = () => {
               </picture>
             </div>
             <picture class="edit-remove">
-                <img id="edit${doc.id}" class ="btn-edit" data-id="${doc.id}" src="./icons/edita.PNG">
+              
                 <img id="remove${doc.id}" class ="btn-remove" data-id="${doc.id}" src="./icons/eliminar.PNG">
             </picture>
             <div class='text-edit-remove'>
-              <p class='texedit'>Editar</p>
+ 
               <p class='texremove'>Eliminar</p>
             </div>
           </div>
