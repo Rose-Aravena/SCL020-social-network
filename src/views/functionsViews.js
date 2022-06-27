@@ -95,29 +95,17 @@ export const listMyPosts = () => {
             <p class="text">${post.description}</p>
             <p class="text">${post.hashtag.join(' ')}</p>
             <div class="dateLike">
-             <p class="date">${post.day}</p>
+              <p class="date">${post.day}</p>
               <span class="count">${usersLikes.length}</span>
-             <picture>
+              <picture>
               <img id="patita${doc.id}" class ="btn-like yes" data-id="${doc.id}" src="./icons/patitalike.PNG">
-             </picture>
+              </picture>
             </div>
-            <picture class='edit-remove'>
-              <img id="edit${doc.id}" class ="btn-edit" data-id="${doc.id}" src="./icons/edita.PNG">
-              <img id="remove${doc.id}" class ="btn-remove" data-id="${doc.id}" src="./icons/eliminar.PNG">
-            </picture>
+              <picture class='edit-remove'>
+                <img id="remove${doc.id}" class ="btn-remove" data-id="${doc.id}" src="./icons/eliminar.PNG">
+              </picture>
             <div class='text-edit-remove'>
-              <p class='texedit'>Editar</p>
               <p class='texremove'>Eliminar</p>
-            </div>
-          </div>
-          <div class='modalContainer' id='modalContainer${doc.id}'>
-            <div class='modal'>
-               <p>¿Seguro que deseas eliminar el Post?</p>
-               <img class='imgDelete' src="./icons/eliminarPost.PNG">
-               <div>
-                 <button id='noDelete${doc.id}' class='noDelete'>Cancelar</button>
-                 <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
-              </div>
             </div>
           </div>`;
       } else {
@@ -128,30 +116,18 @@ export const listMyPosts = () => {
             <p class="text">${post.description}</p>
             <p class="text">${post.hashtag.join(' ')}</p>
             <div class="dateLike">
-               <p class="date">${post.day}</p>
-               <span class="count">${usersLikes.length}</span>
+              <p class="date">${post.day}</p>
+              <span class="count">${usersLikes.length}</span>
               <picture>
                 <img id="patita${doc.id}" class ="btn-like no" data-id="${doc.id}" src="./icons/patita.PNG">
               </picture>
             </div>
             <picture class="edit-remove">
-                <img id="edit${doc.id}" class ="btn-edit" data-id="${doc.id}" src="./icons/edita.PNG">
                 <img id="remove${doc.id}" class ="btn-remove" data-id="${doc.id}" src="./icons/eliminar.PNG">
             </picture>
             <div class='text-edit-remove'>
-              <p class='texedit'>Editar</p>
               <p class='texremove'>Eliminar</p>
             </div>
-          </div>
-          <div class='modalContainer' id='modalContainer${doc.id}'>
-             <div class='modal'>
-               <p>¿Seguro que deseas eliminar el Post?</p>
-               <img class='imgDelete' src="./icons/eliminarPost.PNG">
-               <div>
-                 <button id='noDelete${doc.id}' class='noDelete'>Cancelar</button>
-                 <button id='yesDelete${doc.id}' class='yesDelete'>Confirmar</button>
-                </div>
-             </div>
           </div> `;
       }
     });
