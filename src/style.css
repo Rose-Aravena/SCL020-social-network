@@ -78,6 +78,7 @@ font-style: italic;
     border-radius: 16px;
     border: none;
     color: #12406A;
+    margin: 1% auto 8% auto;
 }
 section{
     display: flex;
@@ -123,7 +124,7 @@ background-color: #ADBED2;
 border-radius: 2px;
 border: none;
 height: 31px ;
-width: 300px;
+width: 75%;
 margin: 0 auto 10px;
 }
 input::-webkit-input-placeholder {
@@ -225,7 +226,7 @@ footer{
     font-weight: 800;
 }
 .date{
-    margin: 0 68% 0 0;
+    margin: 0 65% 0 0;
     padding: 20px 0 0 0;
     font-size: 12px;
 }
@@ -303,10 +304,11 @@ label{
 /* template mypost */
 #out{
     margin: 10px 10px 0px 20px;
+    padding: 0 10px;
 }
 #textOut{
     margin-top: 0px;
-    margin-left: 10px;
+    margin-left: 20px;
     font-size: 10px;
     font-weight: 600;
 }
