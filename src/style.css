@@ -207,7 +207,7 @@ footer{
 #textMyPost{
     font-size: 10px;
     font-weight: 600;
-    margin: 1% 1% 2% 87%;
+    margin: 1% 0 0% 87%;
 }
 /* cardpost */
 #allPost, #allSearch, #allMyPosts {
@@ -481,4 +481,14 @@ label{
 }
 .pic {
     display: flex;
+}
+#postHeader{
+    background-color: #ADBED2;
+    width: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+}
+#allPost{
+    margin-top: 95px;
 }
