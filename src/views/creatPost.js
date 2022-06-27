@@ -6,13 +6,12 @@ const getHTMLTemplate = () => {
   const tempate = // html
     `<form id='formPost'>
     <div id ='createPost'>
-      <p id='username'>User dice:</p>
       <label>Titulo del post</label>
-      <input type='text' id='titlePost' autocomplete='off'/>
+      <input type='text' id='titlePost' autocomplete='off' required/>
       <label>Cuentanos más:</label>
-      <textarea id='description' type='text' autocomplete='off' maxlength="1000" ></textarea>
+      <textarea id='description' type='text' autocomplete='off' maxlength="1000" required></textarea>
       <label>#Hashtag</label>
-      <input id='hashtag' type='text' autocomplete='off'/>
+      <input id='hashtag' type='text' autocomplete='off' required placeholder='#hashtag'/>
     </div>
   
   <div id='button'>    

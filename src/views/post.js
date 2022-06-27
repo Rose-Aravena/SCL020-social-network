@@ -4,10 +4,10 @@ import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
   const template = // html
-    `<div id='postHeader'>
-      <img id="myPost" src="icons/verPosts.png">
-      <p id='textMyPost'> Mis post </p>
-    </div> 
+    `<div class='fixed'>
+    <img id="myPost" src="icons/verPosts.png">
+   <p id='textMyPost'> Mis post </p>
+   </div>
   <div id="allPost"></div>
   <footer>
     <img id="searchButton" src="icons/buscarHashtag.png">

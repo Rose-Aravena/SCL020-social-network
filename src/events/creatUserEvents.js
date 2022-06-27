@@ -13,11 +13,14 @@ export const addEvents = () => {
     const name = document.getElementById('userName').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const textCreateUser = document.getElementById('textCreateUser');
+    const text = 'No pudimos crear tu cuenta, tu contraseña debe tener como mínimo 6 caracteres';
     let newUser;
     try {
       newUser = await createUser(auth, email, password);
     } catch (error) {
       console.log('ocurrio un error con la integracion en el metodo create user ', error);
+      textCreateUser.innerHTML = text;
     }
     try {
       await saveUser(name, email, newUser.user.uid);

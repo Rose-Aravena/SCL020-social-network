@@ -482,13 +482,15 @@ label{
 .pic {
     display: flex;
 }
-#postHeader{
+
+.textError {
+    color: red;
+    text-align: center;
+}
+.fixed {
+    position: sticky;
+    top:0;
     background-color: #ADBED2;
-    width: 100%;
-	left: 0;
-	top: 0;
-	position: fixed;
+    padding: 1px;
 }
-#allPost{
-    margin-top: 95px;
-}
+

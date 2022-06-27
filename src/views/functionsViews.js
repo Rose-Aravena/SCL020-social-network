@@ -10,7 +10,6 @@ export const listAllPost = async () => {
       let container = '';
       querySnapshot.forEach((doc) => {
         const post = doc.data();
-
         const usersLikes = post.usersLikes;
         if (usersLikes.includes(uidUser.uid)) {
           container += // html
