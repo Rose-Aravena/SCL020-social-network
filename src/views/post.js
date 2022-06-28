@@ -4,7 +4,7 @@ import { listAllPost } from './functionsViews.js';
 
 const getHTMLTemplate = () => {
   const template = // html
-    `<div class='fixed'>
+    `<div class='fix'>
     <img id="myPost" src="icons/verPosts.png">
    <p id='textMyPost'> Mis post </p>
    </div>
