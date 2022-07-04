@@ -1,11 +1,11 @@
 # petsLifes.
 
-Usuario: 
-* Dueños de mascotas.
-
 petsLifes nace para satisfacer la necesidad de los dueños o futuos dueños de animales, de obtener mas información sobre cuidados, alimentación, medicamentos, lugares petfriendly, entre otras cosas. En esta red social los usuarios podrán escribir sobre cualquier tema relacionado con animales, exceptuando la venta de estos, ya que el objetivo principal es ayudarse entre usuarios sin buscar un beneficio monetario.
 
 * Prueba la app aquí. [petsLifes](https://social-network-petslifes.netlify.app/)
+
+Usuario: 
+* Dueños de mascotas.
 
 ## ENCUESTA
 
